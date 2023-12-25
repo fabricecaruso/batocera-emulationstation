@@ -1,0 +1,63 @@
+# version format
+version: '{build}'
+
+# Maximum number of concurrent jobs for the project
+max_jobs: 1
+
+# Build worker image (VM template)
+image: Visual Studio 2019
+
+# clone directory
+clone_folder: c:\src\EmulationStation
+
+branches:
+  only:
+    - master
+    - stable
+  except:
+    - continuous-master
+    - continuous-stable
+    
+environment:
+  _LINK_: /FORCE:MULTIPLE
+
+build_script:
+  - cd c:\src\EmulationStation
+  - git submodule update --init --recursive
+  - mkdir build
+  - cd build
+  - cmake -G "Visual Studio 16 2019" -T v142 .. -DCMAKE_GENERATOR_PLATFORM=Win32 -DRETROBAT=1 -DSCREENSCRAPER_DEV_LOGIN="devid=retrobat&devpassword=JRLmOtnZXwo" -DGAMESDB_APIKEY="8d0c672da1c28c48436204317ccb52ca752e0c7539bc3d475552aaad844d2635" -DCHEEVOS_DEV_LOGIN="z=retrobat&y=yALP1ce6fSiIrPSmc4oonKk4QxexS3Rq" -DHFS_DEV_LOGIN="Retrobat:nJuHagHR8NkEz96"
+  - cd c:\src\EmulationStation\build
+  - '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild" emulationstation-all.sln /p:Configuration=Release /p:Platform="Win32"'
+  - cd c:\src\EmulationStation
+  - IF EXIST locale\lang ( xcopy locale\lang resources\locale /S /Y /I )
+  - ps: |
+      $version = [System.Diagnostics.FileVersionInfo]::GetVersionInfo("C:\src\EmulationStation\bin\win32\Release\emulationstation.exe").FileVersion -replace ',','.';
+      $timestamp = Get-Date -Format "yyyymmddHHmm"
+      Update-AppveyorBuild -Version "$version-$timestamp"  
+      "$version-$timestamp" | Out-File c:\src\EmulationStation\version.info -Encoding ASCII
+  - 7z a EmulationStation-Win32.zip C:\src\EmulationStation\bin\win32\Release\*.exe C:\src\EmulationStation\bin\win32\Release\*.exp
+  - 7z a EmulationStation-Win32.zip C:\src\EmulationStation\win32-libs\libvlc\x86\libvlc.dll C:\src\EmulationStation\win32-libs\libvlc\x86\libvlccore.dll C:\src\EmulationStation\win32-libs\libvlc\x86\plugins
+  - 7z a EmulationStation-Win32.zip C:\src\EmulationStation\win32-libs\SDL2_mixer\x86\*.dll C:\src\EmulationStation\win32-libs\SDL2_mixer\x86\optional\*.dll
+  - 7z a EmulationStation-Win32.zip C:\src\EmulationStation\win32-libs\SDL2\x86\SDL2.dll
+  - 7z a EmulationStation-Win32.zip C:\src\EmulationStation\win32-libs\curl\x86\bin\libcurl.dll
+  - 7z a EmulationStation-Win32.zip C:\src\EmulationStation\win32-libs\FreeImage\x86\FreeImage.dll
+  - 7z a EmulationStation-Win32.zip C:\src\EmulationStation\resources
+  - 7z a EmulationStation-Win32.zip C:\src\EmulationStation\version.info
+
+  - 7z a EmulationStation-Win32-no-deps.zip C:\src\EmulationStation\bin\win32\Release\*.exe C:\src\EmulationStation\bin\win32\Release\*.exp
+  - 7z a EmulationStation-Win32-no-deps.zip C:\src\EmulationStation\resources
+  - 7z a EmulationStation-Win32-no-deps.zip C:\src\EmulationStation\version.info
+
+artifacts:
+- path: '*.zip'
+  name: GitHub
+- path: version.info
+  name: GitHub
+  
+deploy:
+- provider: GitHub
+  tag: continuous-%APPVEYOR_REPO_BRANCH%
+  auth_token:
+    secure: J3UfnZmEGS1jcGONL+6zX34MQQZ0DN4mMeKKdX0olGKnegW8XTthICXDjZKPKGN3
+  force_update: true
