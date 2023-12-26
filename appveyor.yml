@@ -55,3 +55,9 @@ artifacts:
 - path: version.info
   name: GitHub
 
+deploy:
+- provider: GitHub
+  tag: continuous-%APPVEYOR_REPO_BRANCH%
+  auth_token:
+    secure: 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
+  force_update: true
