@@ -56,8 +56,8 @@ artifacts:
   name: GitHub
 
 deploy:
-- provider: GitHub
-  tag: continuous-%APPVEYOR_REPO_BRANCH%
-  auth_token:
-    secure: 350qWzHHHd1x/DgzWnUjUJr3ENr8jo9NUZFYlpkJqvymlYwZEhBgzEBBZ+crvout
-  force_update: true
+  - provider: GitHub
+    auth_token:
+      secure: aeboYYL1NtnEGgT+uR8t8NZZIrGtoxhqI95TCX2g7lYpO62JdiYkbVcq+9tKpecD
+    draft: false
+    prerelease: false
