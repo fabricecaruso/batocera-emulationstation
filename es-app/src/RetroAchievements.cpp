@@ -124,6 +124,9 @@ const std::set<unsigned short> consolesWithmd5hashes
 	RC_CONSOLE_SUPERVISION
 };
 
+// Use empty UserAgent with doRequest.php calls
+#define DOREQUEST_USERAGENT ""
+
 std::string RetroAchievements::getApiUrl(const std::string method, const std::string parameters)
 {
 #ifdef CHEEVOS_DEV_LOGIN
@@ -454,8 +457,11 @@ std::map<std::string, std::string> RetroAchievements::getCheevosHashes()
 	{
 		std::map<int, std::string> officialGames;
 
-		HttpReq hashLibrary("https://retroachievements.org/dorequest.php?r=hashlibrary");
-		HttpReq officialGamesList("https://retroachievements.org/dorequest.php?r=officialgameslist");
+		HttpReqOptions options;
+		options.userAgent = DOREQUEST_USERAGENT;
+
+		HttpReq hashLibrary("https://retroachievements.org/dorequest.php?r=hashlibrary", &options);
+		HttpReq officialGamesList("https://retroachievements.org/dorequest.php?r=officialgameslist", &options);
 
 		// Official games
 		if (officialGamesList.wait())
@@ -479,6 +485,8 @@ std::map<std::string, std::string> RetroAchievements::getCheevosHashes()
 					officialGames[gameId] = std::to_string(it->value.GetInt());
 			}
 		}
+		else if (officialGamesList.status() != HttpReq::REQ_SUCCESS)
+			throw std::domain_error("Error while accessing retroachievements official games list :\n" + officialGamesList.getErrorMsg());
 
 		// Hash library
 		if (hashLibrary.wait())
@@ -507,6 +515,12 @@ std::map<std::string, std::string> RetroAchievements::getCheevosHashes()
 				ret[name] = std::to_string(gameId);
 			}
 		}
+		else if (hashLibrary.status() != HttpReq::REQ_SUCCESS)
+			throw std::domain_error("Error while accessing retroachievements hashlibrary :\n" + hashLibrary.getErrorMsg());
+	}
+	catch (const std::exception& e)
+	{
+		throw e;
 	}
 	catch (...)
 	{
@@ -604,7 +618,10 @@ bool RetroAchievements::testAccount(const std::string& username, const std::stri
 
 	try
 	{
-		HttpReq request("https://retroachievements.org/dorequest.php?r=login&u=" + HttpReq::urlEncode(username) + "&p=" + HttpReq::urlEncode(password));
+		HttpReqOptions options;
+		options.userAgent = DOREQUEST_USERAGENT;
+
+		HttpReq request("https://retroachievements.org/dorequest.php?r=login&u=" + HttpReq::urlEncode(username) + "&p=" + HttpReq::urlEncode(password), &options);
 		if (!request.wait())
 		{						
 			tokenOrError = request.getErrorMsg();
