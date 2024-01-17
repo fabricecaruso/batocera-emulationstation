@@ -121,7 +121,7 @@ public:
 
 	virtual bool onMouseClick(int button, bool pressed, int x, int y) override;
 	virtual void onMouseMove(int x, int y) override;
-	virtual void onMouseWheel(int delta) override;
+	virtual bool onMouseWheel(int delta) override;
 	virtual bool hitTest(int x, int y, Transform4x4f& parentTransform, std::vector<GuiComponent*>* pResult = nullptr) override;
 
 	Vector3f getCameraOffset() 
@@ -134,6 +134,8 @@ public:
 
 	Delegate<ILongMouseClickEvent> longMouseClick;
 
+	void		preloadTiles();
+
 protected:
 	virtual void onCursorChanged(const CursorState& state) override;
 	virtual void onScroll(int /*amt*/) { if (!mScrollSound.empty()) Sound::get(mScrollSound)->play(); }
@@ -141,7 +143,7 @@ protected:
 private:
 	void		resetGrid();
 	void		calcGridDimension();
-
+	
 	void		ensureVisibleTileExist();
 	Vector2i	getVisibleRange();
 	void		loadTile(std::shared_ptr<GridTileComponent> tile, typename IList<ImageGridData, T>::Entry& entry);
@@ -270,6 +272,31 @@ std::shared_ptr<GridTileComponent> ImageGridComponent<T>::createTile(int i, int 
 		tile->forceSize(mTileSize, mAutoLayoutZoom);
 
 	return tile;
+}
+
+template<typename T>
+void ImageGridComponent<T>::preloadTiles()
+{
+	int dimOpposite = Math::max(1, isVertical() ? mGridDimension.x() : mGridDimension.y());
+
+	Vector2f startPosition = mTileSize / 2;
+	startPosition += Vector2f(mPadding.x(), mPadding.y());
+
+	Vector2f tileDistance = mTileSize + mMargin;
+
+	for (int i = 0; i < mEntries.size(); i++)
+	{
+		typename IList<ImageGridData, T>::Entry& entry = mEntries[i];
+		if (entry.data.tile != nullptr)
+			continue;
+
+		auto tile = createTile(i, dimOpposite, tileDistance, startPosition);
+		tile->setVisible(false);
+
+		loadTile(tile, entry);
+		
+		entry.data.tile = tile;
+	}
 }
 
 template<typename T>
@@ -783,10 +810,22 @@ void ImageGridComponent<T>::applyTheme(const std::shared_ptr<ThemeData>& theme, 
 	if (elem)
 	{
 		if (elem->has("margin"))
-			mMargin = elem->get<Vector2f>("margin") * screen;
+		{
+			auto margin = elem->get<Vector2f>("margin");
+			if (abs(margin.x()) < 1 && abs(margin.y()) < 1)
+				mMargin = margin * screen;
+			else
+				mMargin = margin; // Pixel size
+		}
 
 		if (elem->has("padding"))
-			mPadding = elem->get<Vector4f>("padding") * Vector4f(screen.x(), screen.y(), screen.x(), screen.y());
+		{
+			auto padding = elem->get<Vector4f>("padding");
+			if (abs(padding.x()) < 1 && abs(padding.y()) < 1 && abs(padding.z()) < 1 && abs(padding.w()) < 1)
+				mPadding = padding * Vector4f(screen.x(), screen.y(), screen.x(), screen.y());
+			else 
+				mPadding = padding; // Pixel size
+		}
 
 		if (elem->has("autoLayout"))
 		{
@@ -979,6 +1018,15 @@ void ImageGridComponent<T>::applyTheme(const std::shared_ptr<ThemeData>& theme, 
 
 	// Trigger the call manually if the theme have no "imagegrid" element
 	resetGrid();
+
+	if (mEntries.size())
+	{
+		for (auto& entry : mEntries)
+		{
+			if (entry.data.tile != nullptr && entry.data.tile->isVisible())
+				mVisibleTiles.push_back(entry.data.tile);
+		}
+	}
 }
 
 template<typename T>
@@ -1415,7 +1463,7 @@ bool ImageGridComponent<T>::hitTest(int x, int y, Transform4x4f& parentTransform
 }
 
 template<typename T>
-void ImageGridComponent<T>::onMouseWheel(int delta)
+bool ImageGridComponent<T>::onMouseWheel(int delta)
 {
 	float dimOpposite = Math::max(1, isVertical() ? mGridDimension.x() : mGridDimension.y());
 
@@ -1446,6 +1494,8 @@ void ImageGridComponent<T>::onMouseWheel(int delta)
 		mCursor = newCursor;
 		onCursorChanged(CURSOR_STOPPED);
 	}
+
+	return true;
 }
 
 

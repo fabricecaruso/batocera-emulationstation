@@ -14,6 +14,7 @@
 #include <libcheevos/cheevos.h>
 
 #include "LocaleES.h"
+#include "EmulationStation.h"
 
 using namespace PlatformIds;
 
@@ -125,9 +126,20 @@ const std::set<unsigned short> consolesWithmd5hashes
 };
 
 // Use empty UserAgent with doRequest.php calls
-#define DOREQUEST_USERAGENT ""
+static HttpReqOptions getHttpOptions()
+{
+	HttpReqOptions options;
 
-std::string RetroAchievements::getApiUrl(const std::string method, const std::string parameters)
+#ifdef CHEEVOS_DEV_LOGIN
+	std::string ret = Utils::String::extractString(CHEEVOS_DEV_LOGIN, "z=", "&");
+	ret =  ret + "/" + Utils::String::replace(RESOURCE_VERSION_STRING, ",", ".");		 
+	options.userAgent = ret;
+#endif	
+
+	return options;
+}
+
+std::string RetroAchievements::getApiUrl(const std::string& method, const std::string& parameters)
 {
 #ifdef CHEEVOS_DEV_LOGIN
 	auto options = std::string(CHEEVOS_DEV_LOGIN);
@@ -137,7 +149,7 @@ std::string RetroAchievements::getApiUrl(const std::string method, const std::st
 #endif
 }
 
-std::string GameInfoAndUserProgress::getImageUrl(const std::string image)
+std::string GameInfoAndUserProgress::getImageUrl(const std::string& image)
 {
 	if (image.empty())
 		return "http://i.retroachievements.org" + ImageIcon;
@@ -154,7 +166,7 @@ std::string Achievement::getBadgeUrl()
 }
 
 
-int jsonInt(const rapidjson::Value& val, const std::string name)
+int jsonInt(const rapidjson::Value& val, const std::string& name)
 {
 	if (!val.HasMember(name.c_str()))
 		return 0;
@@ -170,7 +182,7 @@ int jsonInt(const rapidjson::Value& val, const std::string name)
 	return 0;
 }
 
-std::string jsonString(const rapidjson::Value& val, const std::string name)
+std::string jsonString(const rapidjson::Value& val, const std::string& name)
 {
 	if (!val.HasMember(name.c_str()))
 		return "";
@@ -186,7 +198,7 @@ std::string jsonString(const rapidjson::Value& val, const std::string name)
 	return "";
 }
 
-bool sortAchievements(const Achievement& sys1, const Achievement& sys2)
+static bool sortAchievements(const Achievement& sys1, const Achievement& sys2)
 {
 	if (sys1.DateEarned.empty() != sys2.DateEarned.empty())
 		return !sys1.DateEarned.empty() && sys2.DateEarned.empty();
@@ -197,7 +209,7 @@ bool sortAchievements(const Achievement& sys1, const Achievement& sys2)
 	return sys1.DisplayOrder < sys2.DisplayOrder;
 }
 
-GameInfoAndUserProgress RetroAchievements::getGameInfoAndUserProgress(int gameId, const std::string userName)
+GameInfoAndUserProgress RetroAchievements::getGameInfoAndUserProgress(int gameId, const std::string& userName)
 {
 	auto usrName = userName;
 	if (usrName.empty())
@@ -210,7 +222,8 @@ GameInfoAndUserProgress RetroAchievements::getGameInfoAndUserProgress(int gameId
 	return ret;
 #endif
 
-	HttpReq httpreq(getApiUrl("API_GetGameInfoAndUserProgress", "u=" + HttpReq::urlEncode(usrName) + "&g=" + std::to_string(gameId)));
+	auto options = getHttpOptions();
+	HttpReq httpreq(getApiUrl("API_GetGameInfoAndUserProgress", "u=" + HttpReq::urlEncode(usrName) + "&g=" + std::to_string(gameId)), &options);
 	if (httpreq.wait())
 	{
 		rapidjson::Document doc;
@@ -275,7 +288,7 @@ GameInfoAndUserProgress RetroAchievements::getGameInfoAndUserProgress(int gameId
 	return ret;
 }
 
-UserSummary RetroAchievements::getUserSummary(const std::string userName, int gameCount)
+UserSummary RetroAchievements::getUserSummary(const std::string& userName, int gameCount)
 {
 	auto usrName = userName;
 	if (usrName.empty())
@@ -285,7 +298,8 @@ UserSummary RetroAchievements::getUserSummary(const std::string userName, int ga
 
 	std::string count = std::to_string(gameCount);
 
-	HttpReq httpreq(getApiUrl("API_GetUserSummary", "u="+ HttpReq::urlEncode(usrName) +"&g="+ count +"&a="+ count));
+	auto options = getHttpOptions();
+	HttpReq httpreq(getApiUrl("API_GetUserSummary", "u="+ HttpReq::urlEncode(usrName) +"&g="+ count +"&a="+ count), &options);
 	if (httpreq.wait())
 	{
 		rapidjson::Document doc;
@@ -386,6 +400,34 @@ UserSummary RetroAchievements::getUserSummary(const std::string userName, int ga
 	return ret;
 }
 
+UserRankAndScore RetroAchievements::getUserRankAndScore(const std::string& userName)
+{
+	auto usrName = userName;
+	if (usrName.empty())
+		usrName = SystemConf::getInstance()->get("global.retroachievements.username");
+
+	UserRankAndScore ret;
+
+	auto options = getHttpOptions();
+
+	HttpReq request(getApiUrl("API_GetUserRankAndScore", "u=" + HttpReq::urlEncode(usrName)), &options);
+	if (request.wait())
+	{
+		rapidjson::Document doc;
+		doc.Parse(request.getContent().c_str());
+		if (doc.HasParseError())
+			throw std::domain_error("Error while parsing API GetUserRankAndScore response");
+
+		ret.Score = jsonInt(doc, "Score");
+		ret.SoftcoreScore = jsonInt(doc, "SoftcoreScore");
+		ret.Rank = jsonString(doc, "Rank");
+		ret.TotalRanked = jsonInt(doc, "TotalRanked");
+	}
+	else
+		throw std::domain_error("Error while accessing API GetUserRankAndScore :\n" + request.getErrorMsg());
+
+	return ret;
+}
 
 RetroAchievementInfo RetroAchievements::toRetroAchivementInfo(UserSummary& ret)
 {
@@ -457,8 +499,7 @@ std::map<std::string, std::string> RetroAchievements::getCheevosHashes()
 	{
 		std::map<int, std::string> officialGames;
 
-		HttpReqOptions options;
-		options.userAgent = DOREQUEST_USERAGENT;
+		auto options = getHttpOptions();
 
 		HttpReq hashLibrary("https://retroachievements.org/dorequest.php?r=hashlibrary", &options);
 		HttpReq officialGamesList("https://retroachievements.org/dorequest.php?r=officialgameslist", &options);
@@ -530,7 +571,7 @@ std::map<std::string, std::string> RetroAchievements::getCheevosHashes()
 	return ret;
 }
 
-std::string RetroAchievements::getCheevosHashFromFile(int consoleId, const std::string fileName)
+std::string RetroAchievements::getCheevosHashFromFile(int consoleId, const std::string& fileName)
 {
 	LOG(LogDebug) << "getCheevosHashFromFile : " << fileName;
 
@@ -548,7 +589,7 @@ std::string RetroAchievements::getCheevosHashFromFile(int consoleId, const std::
 	return "00000000000000000000000000000000";	
 }
 
-std::string RetroAchievements::getCheevosHash( SystemData* system, const std::string fileName)
+std::string RetroAchievements::getCheevosHash( SystemData* system, const std::string& fileName)
 {
 	bool fromZipContents = system->shouldExtractHashesFromArchives();
 
@@ -618,8 +659,7 @@ bool RetroAchievements::testAccount(const std::string& username, const std::stri
 
 	try
 	{
-		HttpReqOptions options;
-		options.userAgent = DOREQUEST_USERAGENT;
+		auto options = getHttpOptions();
 
 		HttpReq request("https://retroachievements.org/dorequest.php?r=login&u=" + HttpReq::urlEncode(username) + "&p=" + HttpReq::urlEncode(password), &options);
 		if (!request.wait())

@@ -241,16 +241,25 @@ public:
 		return objects;
 	}
 
+	void moveSelectionBy(int count)
+	{
+		listInput(count);
+	}
+
 protected:
 	void remove(typename std::vector<Entry>::const_iterator& it)
 	{
-		if(mCursor > 0 && it - mEntries.cbegin() <= mCursor)
-		{
-			mCursor--;
-			onCursorChanged(CURSOR_STOPPED);
-		}
+		int index = it - mEntries.cbegin();
 
 		mEntries.erase(it);
+
+		if (mEntries.size() > 0 && (index <= mCursor || mCursor >= mEntries.size()))
+		{
+			if (index < mCursor || mCursor >= mEntries.size())
+				mCursor--;
+
+			onCursorChanged(CURSOR_STOPPED);
+		}
 	}
 
 

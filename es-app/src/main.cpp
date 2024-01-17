@@ -40,6 +40,7 @@
 #include "resources/TextureData.h"
 #include "Scripting.h"
 #include "watchers/WatchersManager.h"
+#include "HttpReq.h"
 
 #ifdef WIN32
 #include <Windows.h>
@@ -526,6 +527,7 @@ int main(int argc, char* argv[])
 	Scripting::fireEvent("start");
 
 	// metadata init
+	HttpReq::resetCookies();
 	Genres::init();
 	MetaDataList::initMetadata();
 
@@ -752,6 +754,7 @@ int main(int argc, char* argv[])
 	ViewController::saveState();
 	CollectionSystemManager::deinit();
 	SystemData::deleteSystems();
+	Scripting::exitScriptingEngine();
 
 	// call this ONLY when linking with FreeImage as a static library
 #ifdef FREEIMAGE_LIB
