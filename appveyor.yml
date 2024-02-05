@@ -26,7 +26,7 @@ build_script:
   - git submodule update --init --recursive
   - mkdir build
   - cd build
-  - cmake -G "Visual Studio 16 2019" -T v142 .. -DCMAKE_GENERATOR_PLATFORM=Win32 -DRETROBAT=1 -DSCREENSCRAPER_DEV_LOGIN="devid=retrobat&devpassword=JRLmOtnZXwo" -DGAMESDB_APIKEY="8d0c672da1c28c48436204317ccb52ca752e0c7539bc3d475552aaad844d2635" -DCHEEVOS_DEV_LOGIN="z=retrobat&y=yALP1ce6fSiIrPSmc4oonKk4QxexS3Rq" -DHFS_DEV_LOGIN="Retrobat:nJuHagHR8NkEz96"
+  - cmake -G "Visual Studio 16 2019" -T v142 .. -DCMAKE_GENERATOR_PLATFORM=Win32 
   - cd c:\src\EmulationStation\build
   - '"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild" emulationstation-all.sln /p:Configuration=Release /p:Platform="Win32"'
   - cd c:\src\EmulationStation
@@ -60,4 +60,4 @@ deploy:
   tag: continuous
   release: continuous
   auth_token:
-    secure: j2wYgDHRlxXaLB8MjsM3l2T+KlBA441m1r9g5cdo6nNh36f7w+iRlUv6eDtNB332
+    secure: 
