@@ -712,7 +712,12 @@ namespace Utils
 			if (path.find("./") == std::string::npos && path.find(".\\") == std::string::npos)
 				return path;
 #else
-			std::string path = exists(_path) ? getAbsolutePath(_path) : _path;
+			// For absolute paths, skip the stat — exists() is only needed to resolve
+			// relative paths, and getAbsolutePath() on an already-absolute path is a no-op.
+			std::string path = isAbsolute(_path) ? getGenericPath(_path) : (exists(_path) ? getAbsolutePath(_path) : getGenericPath(_path));
+			// Early return if there are no . or .. components to normalize
+			if (path.find("/.") == std::string::npos)
+				return path;
 #endif
 			
 			int indexes[32];
