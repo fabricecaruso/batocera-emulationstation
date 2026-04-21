@@ -194,59 +194,62 @@ namespace Utils
 				}
 			}
 
-			static std::optional<bool> exists(const std::string& key) 
+			template<typename Func>
+			static std::optional<bool> queryCacheEntry(const std::string& key, Func func)
 			{
+				if (!Settings::UseFileCache())
+					return std::nullopt;
+
+				auto hash = hashPath(key);
+				{
+					std::shared_lock<std::shared_mutex> lock(mFileCacheMutex);
+					if (auto* e = getCacheEntry(key, hash))
+						return func(e);
+				}
+
+				auto fetched = statKey(key);
 				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
+				return func(&insertEntry(hash, key, std::move(fetched)));
+			}
 
-				auto val = getCacheEntry(key);
-				if (val)
-					return val->_exists;
+			static std::optional<bool> exists(const std::string& key)
+			{
+				return queryCacheEntry(key, [](const FileCache* e) { return std::optional<bool>(e->_exists); });
+			}
 
-				return std::nullopt;
+			// Non-blocking probe: returns true if the key's existence is already
+			// recorded in the cache (either exists or known-not-to-exist).
+			// Never calls stat64 — safe to call from the render thread.
+			static bool isCached(const std::string& key)
+			{
+				if (!Settings::UseFileCache())
+					return false;
+
+				auto hash = hashPath(key);
+				std::shared_lock<std::shared_mutex> lock(mFileCacheMutex);
+				if (mFileCache.count(hash))
+					return true;
+				return mFileCache.count(hashPath(Utils::FileSystem::getParent(key) + "/*")) > 0;
 			}
 
 			static std::optional<bool> isRegularFile(const std::string& key)
 			{
-				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
-
-				auto val = getCacheEntry(key);
-				if (val)
-					return val->_exists && !val->_directory && !val->_symlink;
-
-				return std::nullopt;
+				return queryCacheEntry(key, [](const FileCache* e) { return std::optional<bool>(e->_exists && !e->_directory && !e->_symlink); });
 			}
 
 			static std::optional<bool> isDirectory(const std::string& key)
 			{
-				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
-
-				auto val = getCacheEntry(key);
-				if (val)
-					return val->_exists && val->_directory;
-
-				return std::nullopt;
+				return queryCacheEntry(key, [](const FileCache* e) { return std::optional<bool>(e->_exists && e->_directory); });
 			}
 
 			static std::optional<bool> isSymlink(const std::string& key)
 			{
-				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
-
-				auto val = getCacheEntry(key);
-				if (val)
-					return val->_exists && val->_symlink;
-
-				return std::nullopt;
+				return queryCacheEntry(key, [](const FileCache* e) { return std::optional<bool>(e->_exists && e->_symlink); });
 			}
 
 			static std::optional<bool> isHidden(const std::string& key)
 			{
-				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
-
-				auto val = getCacheEntry(key);
-				if (val)
-					return val->_exists && (val->_hidden || getFileName(key)[0] == '.');
-
-				return std::nullopt;
+				return queryCacheEntry(key, [&key](const FileCache* e) { return std::optional<bool>(e->_exists && (e->_hidden || getFileName(key)[0] == '.')); });
 			}
 
 			static void resetCache()
@@ -256,26 +259,33 @@ namespace Utils
 			}
 
 		private:
-			static FileCache* getCacheEntry(const std::string& key)
+			// Looks up key in the cache. MUST be called under at least a shared_lock.
+			// Returns pointer to the entry if found (including parent-wildcard hits,
+			// which return a static "not exists" sentinel), or nullptr if not cached.
+			static const FileCache* getCacheEntry(const std::string& key, size_t hash)
 			{
-				if (!Settings::UseFileCache())
+				if (mFileCache.empty())
 					return nullptr;
 
-				auto hash = hashPath(key);
+				auto it = mFileCache.find(hash);
+				if (it != mFileCache.cend())
+					return &it->second;
 
-				if (mFileCache.size())
+				it = mFileCache.find(hashPath(Utils::FileSystem::getParent(key) + "/*"));
+				if (it != mFileCache.cend())
 				{
-					auto it = mFileCache.find(hash);
-					if (it != mFileCache.cend())
-						return &it->second;
-
-					it = mFileCache.find(hashPath(Utils::FileSystem::getParent(key) + "/*"));
-					if (it != mFileCache.cend())
-						return &mFileCache.try_emplace(hash, false, false).first->second;
+					static const FileCache notExists(false, false);
+					return &notExists;
 				}
 
-#ifdef WIN32			
-				return &mFileCache.try_emplace(hash, GetFileAttributesW(Utils::String::convertToWideString(key).c_str())).first->second;
+				return nullptr;
+			}
+
+			// Performs filesystem I/O with NO lock held — safe to call concurrently.
+			static FileCache statKey(const std::string& key)
+			{
+#ifdef WIN32
+				return FileCache(GetFileAttributesW(Utils::String::convertToWideString(key).c_str()));
 #else
 				struct stat64 info;
 				int ret = stat64(key.c_str(), &info);
@@ -290,8 +300,24 @@ namespace Utils
 						directory = S_ISDIR(si.st_mode);
 				}
 
-				return &mFileCache.try_emplace(hash, exists, directory, symlink).first->second;
+				return FileCache(exists, directory, symlink);
 #endif
+			}
+
+			// Inserts a pre-computed entry. MUST be called with exclusive lock held.
+			// Double-checks for races: returns the authoritative entry (ours or a
+			// concurrent thread's insert, whichever arrived first).
+			static const FileCache& insertEntry(size_t hash, const std::string& key, FileCache fetched)
+			{
+				auto it = mFileCache.find(hash);
+				if (it != mFileCache.cend())
+					return it->second;
+
+				it = mFileCache.find(hashPath(Utils::FileSystem::getParent(key) + "/*"));
+				if (it != mFileCache.cend())
+					return mFileCache.try_emplace(hash, false, false).first->second;
+
+				return mFileCache.try_emplace(hash, std::move(fetched)).first->second;
 			}
 
 			bool _exists;
