@@ -10,6 +10,7 @@
 #include <string.h>
 #include <algorithm>
 #include <set>
+#include <shared_mutex>
 
 #if defined(_WIN32)
 // because windows...
@@ -91,7 +92,7 @@ namespace Utils
 				if (!Settings::UseFileCache())
 					return;
 
-				std::unique_lock<std::mutex> guard(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> guard(mFileCacheMutex);
 
 				auto [it, inserted] = mFileCache.try_emplace(hashPath(key), data);
 				if (!inserted)
@@ -108,7 +109,7 @@ namespace Utils
 				if (!Settings::UseFileCache())
 					return;
 
-				std::unique_lock<std::mutex> guard(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> guard(mFileCacheMutex);
 
 				auto [it, inserted] = mFileCache.try_emplace(hashPath(key), dwFileAttributes); 
 				if (!inserted)
@@ -136,7 +137,7 @@ namespace Utils
 #if WIN32			
 				int ret = _wstat64(Utils::String::convertToWideString(key).c_str(), info);
 
-				std::unique_lock<std::mutex> guard(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> guard(mFileCacheMutex);
 				mFileCache.try_emplace(hashPath(key), ret == 0, ret == 0 && S_ISDIR(info->st_mode));				
 #else
 				int ret = stat64(key.c_str(), info);
@@ -154,7 +155,7 @@ namespace Utils
 					}
 				}
 
-				std::unique_lock<std::mutex> guard(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> guard(mFileCacheMutex);
 				mFileCache[hashPath(key)] = cache;			
 #endif
 
@@ -166,7 +167,7 @@ namespace Utils
 				if (!Settings::UseFileCache())
 					return;
 
-				std::unique_lock<std::mutex> guard(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> guard(mFileCacheMutex);
 				auto [it, inserted] = mFileCache.try_emplace(hashPath(key), exists, dir, symlink);
 				if (!inserted)
 				{
@@ -181,7 +182,7 @@ namespace Utils
 				if (!Settings::UseFileCache())
 					return;
 
-				std::unique_lock<std::mutex> guard(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> guard(mFileCacheMutex);
 
 				mFileCache.erase(hashPath(key));
 				
@@ -195,7 +196,7 @@ namespace Utils
 
 			static std::optional<bool> exists(const std::string& key) 
 			{
-				std::unique_lock<std::mutex> lock(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
 
 				auto val = getCacheEntry(key);
 				if (val)
@@ -206,7 +207,7 @@ namespace Utils
 
 			static std::optional<bool> isRegularFile(const std::string& key)
 			{
-				std::unique_lock<std::mutex> lock(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
 
 				auto val = getCacheEntry(key);
 				if (val)
@@ -217,7 +218,7 @@ namespace Utils
 
 			static std::optional<bool> isDirectory(const std::string& key)
 			{
-				std::unique_lock<std::mutex> lock(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
 
 				auto val = getCacheEntry(key);
 				if (val)
@@ -228,7 +229,7 @@ namespace Utils
 
 			static std::optional<bool> isSymlink(const std::string& key)
 			{
-				std::unique_lock<std::mutex> lock(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
 
 				auto val = getCacheEntry(key);
 				if (val)
@@ -239,7 +240,7 @@ namespace Utils
 
 			static std::optional<bool> isHidden(const std::string& key)
 			{
-				std::unique_lock<std::mutex> lock(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> lock(mFileCacheMutex);
 
 				auto val = getCacheEntry(key);
 				if (val)
@@ -250,7 +251,7 @@ namespace Utils
 
 			static void resetCache()
 			{
-				std::unique_lock<std::mutex> guard(mFileCacheMutex);
+				std::unique_lock<std::shared_mutex> guard(mFileCacheMutex);
 				mFileCache.clear();
 			}
 
@@ -299,7 +300,7 @@ namespace Utils
 			bool _symlink;
 
 			static std::unordered_map<size_t, FileCache> mFileCache;
-			static std::mutex mFileCacheMutex;
+			static std::shared_mutex mFileCacheMutex;
 
 			static size_t hashPath(const std::string& path) 
 			{ 
@@ -308,7 +309,7 @@ namespace Utils
 		};
 
 		std::unordered_map<size_t, FileCache> FileCache::mFileCache;
-		std::mutex FileCache::mFileCacheMutex;
+		std::shared_mutex FileCache::mFileCacheMutex;
 
 		void FileSystemCache::reset()
 		{
