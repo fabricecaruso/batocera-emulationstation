@@ -8178,6 +8178,7 @@
     <game id="mariokartarcadegp2dolrelseur">
       <wheel type="Steering Wheel" rotation="200"/>
     </game>
+  </system>
   <system id="wii">
     <game id="default">
       <wheel wheel="joystick1left" accelerate="a" brake="b"/>
