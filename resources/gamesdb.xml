@@ -8157,10 +8157,10 @@
     </game>
   </system>
   <system id="triforce">
-    <game id="fzeroax">
+    <game id="fzeroaxmonsterride">
       <wheel type="Steering Wheel" rotation="200"/>
     </game>
-    <game id="fzeroaxmonsterride">
+    <game id="fzeroax">
       <wheel type="Steering Wheel" rotation="200"/>
     </game>
     <game id="mariokartgp1">
@@ -8169,13 +8169,13 @@
     <game id="mariokartgp2">
       <wheel type="Steering Wheel" rotation="200"/>
     </game>
-    <game id="mariokartarcadegp">
+    <game id="mariokartarcadegp2dolrelseur">
       <wheel type="Steering Wheel" rotation="200"/>
     </game>
     <game id="mariokartarcadegp2">
       <wheel type="Steering Wheel" rotation="200"/>
     </game>
-    <game id="mariokartarcadegp2dolrelseur">
+    <game id="mariokartarcadegp">
       <wheel type="Steering Wheel" rotation="200"/>
     </game>
   </system>
