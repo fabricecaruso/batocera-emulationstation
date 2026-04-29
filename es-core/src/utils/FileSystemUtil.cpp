@@ -419,7 +419,7 @@ namespace Utils
 							if (entry->d_type == 10)
 							{
 								struct stat64 info;
-								if (stat64(resolveSymlink(name).c_str(), &info) == 0)
+								if (stat64(resolveSymlink(fullName).c_str(), &info) == 0)
 									directory = S_ISDIR(info.st_mode);
 								else
 									directory = false;
@@ -1024,10 +1024,10 @@ namespace Utils
 				{
 					resolved.resize(cnt);
 
-					if (resolved[0] == '.')
-						resolved = getAbsolutePath(resolved, getParent(path));
-					else 
+					if (resolved[0] == '/')
 						resolved = getGenericPath(resolved);
+					else
+						resolved = getAbsolutePath(resolved, getParent(path));
 				}
 			}
 #endif // _WIN32
