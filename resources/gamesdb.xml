@@ -2719,6 +2719,9 @@
     <game id="missile2a">
       <trackball/>
     </game>
+    <game id="MissionImpossible">
+      <gun/>
+    </game>
     <game id="moonwar">
       <spinner/>
     </game>
