@@ -1338,17 +1338,17 @@ void ViewController::reloadAllGames(Window* window, bool deleteCurrentGui, bool 
 	if (sInstance == nullptr)
 		return;
 
-	bool parseGamelistOnly = Settings::ParseGamelistOnly();
+	auto gameLoadingMode = Settings::GameLoadingMode();
 	bool ignoreGamelist = Settings::IgnoreGamelist();
 	bool removeMultiDiskContent = Settings::RemoveMultiDiskContent();
 
 	if (updateGameLists)
 	{
-		Settings::setParseGamelistOnly(false);
+		Settings::setGameLoadingMode(GAME_LOADING_NORMAL);
 		Settings::setIgnoreGamelist(false);
 		Settings::setRemoveMultiDiskContent(true);
 		
-		Settings::setPackGamelists(parseGamelistOnly);
+		Settings::setPackGamelists(gameLoadingMode == GAME_LOADING_GAMELIST_ONLY);
 		Settings::setBuildMultiDiskContentCache(true);
 	}
 
@@ -1395,7 +1395,7 @@ void ViewController::reloadAllGames(Window* window, bool deleteCurrentGui, bool 
 
 	if (updateGameLists)
 	{
-		Settings::setParseGamelistOnly(parseGamelistOnly);
+		Settings::setGameLoadingMode(gameLoadingMode);
 		Settings::setIgnoreGamelist(ignoreGamelist);
 		Settings::setRemoveMultiDiskContent(removeMultiDiskContent);		
 		Settings::setPackGamelists(false);

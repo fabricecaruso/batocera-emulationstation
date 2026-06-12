@@ -940,6 +940,21 @@ void GuiMenu::openDeveloperSettings()
 
 	s->addGroup(_("DATA MANAGEMENT"));
 
+	// Game loading mode (replaces separate ParseGamelistOnly and SkipGameScanAtStartup toggles)
+	auto gameLoadingMode = std::make_shared<OptionListComponent<std::string> >(mWindow, _("GAME LOADING"), false);
+
+	std::string currentMode = Settings::GameLoadingMode();
+
+	gameLoadingMode->add(_("NORMAL"), GAME_LOADING_NORMAL, currentMode == GAME_LOADING_NORMAL);
+	gameLoadingMode->add(_("PARSE GAMELISTS ONLY"), GAME_LOADING_GAMELIST_ONLY, currentMode == GAME_LOADING_GAMELIST_ONLY);
+	gameLoadingMode->add(_("GAME DATABASE CACHE"), GAME_LOADING_DATABASE, currentMode == GAME_LOADING_DATABASE);
+
+	s->addWithDescription(_("GAME LOADING"), _("How games are discovered at startup. Normal scans the filesystem. Parse Gamelists Only reads XML only. Game Database Cache loads from a local SQLite cache for fastest startup."), gameLoadingMode);
+	s->addSaveFunc([gameLoadingMode]
+		{
+			Settings::setGameLoadingMode(gameLoadingMode->getSelected());
+		});
+
 	// ExcludeMultiDiskContent
 	auto excludeMultiDiskContent = std::make_shared<SwitchComponent>(mWindow);
 	excludeMultiDiskContent->setState(Settings::getInstance()->getBool("RemoveMultiDiskContent"));
@@ -960,12 +975,6 @@ void GuiMenu::openDeveloperSettings()
 	save_gamelists->setState(Settings::getInstance()->getBool("SaveGamelistsOnExit"));
 	s->addWithLabel(_("SAVE METADATA ON EXIT"), save_gamelists);
 	s->addSaveFunc([save_gamelists] { Settings::getInstance()->setBool("SaveGamelistsOnExit", save_gamelists->getState()); });
-
-	// gamelist
-	auto parse_gamelists = std::make_shared<SwitchComponent>(mWindow);
-	parse_gamelists->setState(Settings::getInstance()->getBool("ParseGamelistOnly"));
-	s->addWithDescription(_("PARSE GAMELISTS ONLY"), _("Debug tool: Don't check if the ROMs actually exist. Can cause problems!"), parse_gamelists);
-	s->addSaveFunc([parse_gamelists] { Settings::getInstance()->setBool("ParseGamelistOnly", parse_gamelists->getState()); });
 
 	// Local Art
 	auto local_art = std::make_shared<SwitchComponent>(mWindow);

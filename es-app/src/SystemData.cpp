@@ -26,6 +26,7 @@
 #include "Paths.h"
 #include "SystemRandomPlaylist.h"
 #include "ThemeData.h"
+#include "GameDatabase.h"
 
 #if WIN32
 #include "Win32ApiSystem.h"
@@ -100,30 +101,73 @@ SystemData::SystemData(const SystemMetadata& meta, SystemEnvironmentData* envDat
 		std::unordered_map<std::string, FileData*> fileMap;
 		fileMap[mEnvData->mStartPath] = mRootFolder;
 
-		if (!Settings::ParseGamelistOnly())
+		bool didScan = false;
+		bool skipScan = Settings::GameLoadingMode() == GAME_LOADING_DATABASE;
+
+		LOG(LogDebug) << "SystemData[" << mMetadata.name << "]: GameLoadingMode=" << Settings::GameLoadingMode() << ", skipScan=" << skipScan;
+
+		// Try loading from database if scanning is disabled
+		if (skipScan)
 		{
-			populateFolder(mRootFolder, fileMap);
-
-			if (!UIModeController::LoadEmptySystems())
+			GameDatabase* db = GameDatabase::getInstance();
+			if (db && db->isInitialized() && db->hasSystemCache(mMetadata.name))
 			{
-				if (mRootFolder->getChildren().size() == 0)
-					return;
-
-				if (mHidden && !Settings::HiddenSystemsShowGames())
-					return;
+				if (db->loadSystem(this, fileMap))
+				{
+					LOG(LogInfo) << "SystemData[" << mMetadata.name << "]: Loaded from cache successfully";
+					didScan = false; // loaded from cache
+				}
+				else
+				{
+					LOG(LogWarning) << "SystemData[" << mMetadata.name << "]: Cache load failed, falling back to filesystem scan";
+					skipScan = false; // DB load failed, fall back to scan
+				}
+			}
+			else
+			{
+				LOG(LogInfo) << "SystemData[" << mMetadata.name << "]: No cache exists, falling back to filesystem scan";
+				skipScan = false; // no cache exists yet, must scan
 			}
 		}
 
-		if (!Settings::IgnoreGamelist())
+		if (!skipScan)
 		{
-			if (!mHidden && Settings::PackGamelists())
-				packGamelist(this);
+			if (!Settings::ParseGamelistOnly())
+			{
+				populateFolder(mRootFolder, fileMap);
+				didScan = true;
 
-			parseGamelist(this, fileMap);
+				if (!UIModeController::LoadEmptySystems())
+				{
+					if (mRootFolder->getChildren().size() == 0)
+						return;
+
+					if (mHidden && !Settings::HiddenSystemsShowGames())
+						return;
+				}
+			}
+
+			if (!Settings::IgnoreGamelist())
+			{
+				if (!mHidden && Settings::PackGamelists())
+					packGamelist(this);
+
+				parseGamelist(this, fileMap);
+			}
+
+			if (Settings::RemoveMultiDiskContent() || Settings::BuildMultiDiskContentCache())
+				removeMultiDiskContent(fileMap);
 		}
-		
-		if (Settings::RemoveMultiDiskContent() || Settings::BuildMultiDiskContentCache())
-			removeMultiDiskContent(fileMap);
+
+		if (didScan)
+		{
+			GameDatabase* db = GameDatabase::getInstance();
+			if (db && db->isInitialized())
+			{
+				LOG(LogInfo) << "SystemData[" << mMetadata.name << "]: Syncing scan results to database";
+				db->syncSystem(this);
+			}
+		}
 	}
 	else
 	{
@@ -1001,7 +1045,13 @@ bool SystemData::loadConfig(Window* window)
 		// Load features before creating collections
 		//loadFeatures();
 
+		if (window != NULL)
+			window->renderSplashScreen(_("updateSystemsList"), systemCount == 0 ? 0 : currentSystem / (float)(systemCount + 1));
+
 		CollectionSystemManager::get()->updateSystemsList();
+
+		if (window != NULL)
+			window->renderSplashScreen(_("onThemeChanged"), systemCount == 0 ? 0 : currentSystem / (float)(systemCount + 1));
 
 		for (auto sys : SystemData::sSystemVector)
 		{
@@ -1013,6 +1063,9 @@ bool SystemData::loadConfig(Window* window)
 			}
 		}
 	}
+
+	if (window != NULL)
+		window->renderSplashScreen(_("ThreadedHasher"), systemCount == 0 ? 0 : currentSystem / (float)(systemCount + 1));
 
 	if (window != nullptr && !ThreadedHasher::isRunning())
 	{
@@ -1029,6 +1082,9 @@ bool SystemData::loadConfig(Window* window)
 	}
 
 	ThemeFileCache::getInstance().clear();
+
+	if (window != NULL)
+		window->renderSplashScreen(_("LoadConfig"), systemCount == 0 ? 0 : currentSystem / (float)(systemCount + 1));
 
 	return true;
 }

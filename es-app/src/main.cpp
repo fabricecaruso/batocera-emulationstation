@@ -44,6 +44,7 @@
 #include <thread>
 #include "ZaparooSupport.h"
 #include "utils/ThreadPool.h"
+#include "GameDatabase.h"
 
 #ifdef WIN32
 #include <Windows.h>
@@ -565,6 +566,18 @@ int main(int argc, char* argv[])
 	PowerSaver::init();
 	InputConfig::AssignActionButtons();
 
+	// Initialize game database (only when using database cache mode)
+	if (Settings::GameLoadingMode() == GAME_LOADING_DATABASE)
+	{
+		std::string dbPath = Paths::getUserEmulationStationPath() + "/gamedatabase.db";
+		LOG(LogInfo) << "GameDatabase: GameLoadingMode is " << GAME_LOADING_DATABASE << ", initializing database at " << dbPath;
+		GameDatabase::getInstance()->init(dbPath);
+	}
+	else
+	{
+		LOG(LogInfo) << "GameDatabase: GameLoadingMode is " << Settings::GameLoadingMode() << ", skipping database initialization";
+	}
+
 	if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::PDFEXTRACTION))
 		TextureData::PdfHandler = ApiSystem::getInstance();
 	
@@ -786,10 +799,12 @@ int main(int argc, char* argv[])
 		TRYCATCH("Window.update" ,window.update(deltaTime))	
 		TRYCATCH("Window.render", window.render())
 
+		Renderer::swapBuffers();
+
 		int fpsLimit = Settings::FpsLimit();
 		if (fpsLimit > 0)
 		{
-			int frameTime = (1000 + fpsLimit / 2) / fpsLimit;
+			int frameTime = 1000 / fpsLimit;
 			int processDuration = SDL_GetTicks() - curTime;
 			if (processDuration < frameTime)
 			{
@@ -799,7 +814,6 @@ int main(int argc, char* argv[])
 			}
 		}
 
-		Renderer::swapBuffers();		
 	}
 
 	if (Utils::Platform::isFastShutdown())
@@ -820,6 +834,7 @@ int main(int argc, char* argv[])
 	MameNames::deinit();
 	ViewController::saveState();
 	CollectionSystemManager::deinit();
+	GameDatabase::getInstance()->deinit();
 	SystemData::deleteSystems();
 	Scripting::exitScriptingEngine();
 

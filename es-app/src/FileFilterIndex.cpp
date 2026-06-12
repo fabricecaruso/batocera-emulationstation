@@ -862,7 +862,7 @@ int FileFilterIndex::showFile(FileData* game)
 				else 
 				{
 					std::string path = game->getMetadata().get(it);
-					if (!path.empty() && Utils::FileSystem::exists(path))
+					if (!path.empty() && (Settings::PreloadMedias() || Utils::FileSystem::exists(path)))
 					{
 						filterValid = true;
 						break;
@@ -884,7 +884,7 @@ int FileFilterIndex::showFile(FileData* game)
 			for (auto it : *keys)
 			{
 				std::string path = game->getMetadata().get(it);
-				if (path.empty() || !Utils::FileSystem::exists(path))
+				if (path.empty() || (Settings::PreloadMedias() || !Utils::FileSystem::exists(path)))
 				{
 					filterValid = true;
 					break;

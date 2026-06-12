@@ -8,6 +8,11 @@
 #include <set>
 #include "utils/Delegate.h"
 
+// Game loading modes
+#define GAME_LOADING_NORMAL        "normal"
+#define GAME_LOADING_GAMELIST_ONLY "gamelistonly"
+#define GAME_LOADING_DATABASE      "database"
+
 // Non-cached settings macros
 #define DEFINE_BOOL_SETTING(XX) static bool XX() { return Settings::getInstance()->getBool(#XX); }; static bool set##XX(bool val) { return Settings::getInstance()->setBool(#XX, val); };
 #define DEFINE_INT_SETTING(XX) static int XX() { return Settings::getInstance()->getInt(#XX); }; static bool set##XX(int val) { return Settings::getInstance()->setInt(#XX, val); };
@@ -106,7 +111,7 @@ public:
 	DEFINE_BOOL_SETTING(IgnoreGamelist)
 	DEFINE_BOOL_SETTING(SaveGamelistsOnExit)
 	DEFINE_BOOL_SETTING(RemoveMultiDiskContent)	
-	DEFINE_BOOL_SETTING(ParseGamelistOnly)
+	DEFINE_STRING_SETTING(GameLoadingMode)	
 	DEFINE_BOOL_SETTING(ThreadedLoading)
 	DEFINE_BOOL_SETTING(CheevosCheckIndexesAtStart)
 	DEFINE_BOOL_SETTING(NetPlayCheckIndexesAtStart)
@@ -127,6 +132,8 @@ public:
 	static Delegate<ISettingsChangedEvent> settingChanged;
 
 	const std::set<std::string>& getHiddenSystems() { return mHiddenSystems; }
+
+	static bool ParseGamelistOnly() { return GameLoadingMode() == GAME_LOADING_GAMELIST_ONLY; }
 
 private:
 	static Settings* sInstance;

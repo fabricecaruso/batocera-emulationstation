@@ -515,6 +515,19 @@ void resetGamelistUsageData(SystemData* system)
 	}
 }
 
+static void getDirContent(const std::string& path, SystemData* system, std::set<std::string>& files)
+{
+	Utils::FileSystem::stringList ret;
+
+	for (auto file : Utils::FileSystem::getDirectoryFiles(path))
+	{		
+		if (file.directory && !system->getSystemEnvData()->isValidExtension(Utils::String::toLower(Utils::FileSystem::getExtension(file.path))))
+			getDirContent(file.path, system, files);
+		else
+			files.insert(Utils::FileSystem::getCanonicalPath(file.path));
+	}
+}
+
 void packGamelist(SystemData* system)
 {
 	if (!system->isGameSystem() || system->isCollection())
@@ -547,9 +560,7 @@ void packGamelist(SystemData* system)
 	}
 
 	std::set<std::string> files;
-
-	for (auto file : Utils::FileSystem::getDirContent(system->getStartPath(), true))
-		files.insert(Utils::FileSystem::getCanonicalPath(file));
+	getDirContent(system->getStartPath(), system, files);
 
 	std::set<std::string> pathMdds;
 	for (auto mdd : MetaDataList::getMDD())
