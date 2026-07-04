@@ -1658,6 +1658,19 @@ bool ApiSystem::getLEDBrightness(int& value)
     return false;
 #endif
 
+    // Handle software-controlled brightness platforms directly from configuration
+    if (LED_COLOUR_NAME == "cubexx" || LED_COLOUR_NAME == "rg_vita_pro" || LED_COLOUR_NAME == "legiongos" || LED_COLOUR_NAME == "legiongo")
+    {
+        mSystemLedType = LED_TYPE_UNIFIED;
+        std::string valStr = SystemConf::getInstance()->get("led.brightness");
+        if (valStr.empty()) {
+            value = 100; // Default to 100% if not yet configured
+        } else {
+            value = Utils::String::toInteger(valStr);
+        }
+        return true;
+    }
+
     if (LED_BRIGHTNESS_VALUE.empty() || LED_MAX_BRIGHTNESS_VALUE.empty())
     {
         auto directories = Utils::FileSystem::getDirContent("/sys/class/leds");
