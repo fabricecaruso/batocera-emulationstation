@@ -2013,7 +2013,7 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "BATAS FPS"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2260,10 +2260,10 @@ msgid "UPDATER IS ALREADY RUNNING"
 msgstr "PEMBARUAN SEDANG BERLANGSUNG"
 
 msgid "START LOCAL MEDIA UPDATE"
-msgstr ""
+msgstr "MULAI PEMBAHARUAN LOCAL MEDIA"
 
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
-msgstr ""
+msgstr "SUNGGUH INGIN PEMBAHARUAN LOCAL MEDIA"
 
 msgid "LANGUAGE"
 msgstr "BAHASA"

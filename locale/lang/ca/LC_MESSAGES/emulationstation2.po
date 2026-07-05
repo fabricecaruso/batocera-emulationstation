@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: emulationstation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-15 23:48+0100\n"
-"PO-Revision-Date: 2026-06-16 13:53+0200\n"
+"PO-Revision-Date: 2026-06-24 19:48+0200\n"
 "Last-Translator: pedrobarbosa\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -102,7 +102,7 @@ msgid "Loading theme"
 msgstr "Carregant tema"
 
 msgid "Loading gamelists"
-msgstr "Carregant gamelists"
+msgstr "Carregant llistes de jocs"
 
 msgid "Loading..."
 msgstr "Carregant..."
@@ -851,7 +851,7 @@ msgid "VIEW GAME MAP"
 msgstr "VEURE EL MAPA DEL JOC"
 
 msgid "VIEW FULLSCREEN VIDEO"
-msgstr "VEURE VIDEO A PANTALLA COMPLETA"
+msgstr "VEURE VÍDEO A PANTALLA COMPLETA"
 
 msgid "VIEW GAME MEDIA"
 msgstr "VEURE CONTINGUTS DEL JOC"
@@ -945,7 +945,7 @@ msgid "ADD TO CUSTOM COLLECTION..."
 msgstr "AFEGIR A COL·LECCIÓ PERSONALITZADA …"
 
 msgid "SCRAPE"
-msgstr "OBTENIR CONTINGUTS DEL JOC"
+msgstr "OBTENIR INFORMACIÓ"
 
 msgid "EDIT PADTOKEY PROFILE"
 msgstr "EDITAR PERFIL PAD-A-TECLA"
@@ -1041,7 +1041,7 @@ msgid "DON'T SHOW GROUPS WITH ONLY ONE SYSTEM"
 msgstr "NO MOSTRAR GRUPS AMB UN SOL SISTEMA"
 
 msgid "UPDATE GAMELISTS"
-msgstr "ACTUALITZAR GAMELISTS"
+msgstr "ACTUALITZAR LLISTES DE JOCS"
 
 msgid "SELECT COLLECTIONS"
 msgstr "SELECCIONAR COL·LECCIONS"
@@ -1202,10 +1202,10 @@ msgid "RIGHT SHOULDER"
 msgstr "BOTÓ DRET (RB/R1)"
 
 msgid "LEFT TRIGGER"
-msgstr "GATELL ESQUERRE"
+msgstr "GALLET ESQUERRE"
 
 msgid "RIGHT TRIGGER"
-msgstr "GATELL DRET"
+msgstr "GALLET DRET"
 
 msgid "LEFT STICK PRESS"
 msgstr "PRESSIÓ ANALÒGIC ESQUERRE"
@@ -1451,25 +1451,25 @@ msgid "CUSTOM RELAY SERVER"
 msgstr "SERVIDOR DE RETRANSMISSIÓ PERSONALITZAT"
 
 msgid "SCRAPER"
-msgstr "RASPADOR"
+msgstr "OBTENIR INFORMACIÓ DE JOCS"
 
 msgid "ACCOUNTS"
 msgstr "COMPTE"
 
 msgid "SCRAPING DATABASE"
-msgstr "BASE DE DADES DE CONTINGUTS DE JOC"
+msgstr "BASE DE DADES D’INFORMACIÓ DE JOCS"
 
 msgid "SOURCE"
 msgstr "ORIGEN"
 
 msgid "SCRAPE FROM"
-msgstr "OBTENIR CONTINGUTS DE"
+msgstr "OBTENIR INFORMACIÓ DE"
 
 msgid "FILTERS"
 msgstr "FILTRES"
 
 msgid "GAMES TO SCRAPE FOR"
-msgstr "JOCS DELS QUE OBTENIR CONTINGUTS"
+msgstr "JOCS DELS QUE OBTENIR INFORMACIÓ"
 
 msgid "GAMES MISSING ANY MEDIA"
 msgstr "JOCS QUE MANQUEN D’ALGUN CONTINGUT"
@@ -1478,7 +1478,7 @@ msgid "GAMES MISSING ALL MEDIA"
 msgstr "JOCS SENSE CAP CONTINGUT"
 
 msgid "IGNORE RECENTLY SCRAPED GAMES"
-msgstr "IGNORAR JOCS AMB CONTINGUTS RECENTMENT OBTINGUTS"
+msgstr "IGNORAR JOCS AMB CONTINGUTS OBTINGUTS RECENTMENT"
 
 msgid "LAST DAY"
 msgstr "DARRER DIA"
@@ -1523,7 +1523,7 @@ msgid "FAN ART"
 msgstr "FAN ART"
 
 msgid "BOX SOURCE"
-msgstr "ORIGEN DE LA CAIXA"
+msgstr "ORIGEN DE LA CAPSA"
 
 msgid "LOGO SOURCE"
 msgstr "ORIGEN DEL LOGO"
@@ -1568,7 +1568,7 @@ msgid "BEZEL (16:9)"
 msgstr "MOTLLURA (16:9)"
 
 msgid "BOX BACKSIDE"
-msgstr "CONTRACOBERTA DE LA CAIXA"
+msgstr "CONTRACOBERTA DE LA CAPSA"
 
 msgid "MAP"
 msgstr "MAPA"
@@ -1580,7 +1580,7 @@ msgid "PADTOKEY SETTINGS"
 msgstr "AJUSTOS PAD-A-TECLA"
 
 msgid "MANUAL SCRAPE"
-msgstr "OBTENIR INFORMACIÓ DE JOC MANUAL"
+msgstr "OBTENCIÓ MANUAL D’INFORMACIÓ DE JOCS"
 
 msgid "INCLUDED SCRAPERS"
 msgstr "SERVIDORS D’INFORMACIÓ DE JOCS"
@@ -1799,7 +1799,7 @@ msgid "Cpu max frequency"
 msgstr "Freqüència màxima del processador"
 
 msgid "Cpu feature"
-msgstr "Característica del processador"
+msgstr "Característiques de processador"
 
 msgid "Available Memory"
 msgstr "Memòria disponible"
@@ -1808,7 +1808,7 @@ msgid "Display Resolution"
 msgstr "Resolució de pantalla"
 
 msgid "Display Refresh Rate"
-msgstr "Freqüència de refresc de pantalla"
+msgstr "Freqüència de mostratge de pantalla"
 
 msgid "OpenGL Driver Version"
 msgstr "Versió de controlador OpenGL"
@@ -1921,7 +1921,7 @@ msgid "UNLOCK USER INTERFACE MODE"
 msgstr "DESBLOQUEJAR MODE D'INTERFÍCIE D'USUARI"
 
 msgid "QUIT"
-msgstr "SURT"
+msgstr "SORTIR"
 
 msgid "ARE YOU SURE YOU WANT TO CONFIGURE THE INPUT?"
 msgstr "ESTEU SEGURS DE VOLER CONFIGURAR EL DISPOSITIU D'ENTRADA?"
@@ -1963,7 +1963,7 @@ msgid "DMDSERVER restarted"
 msgstr "DMDSERVER reiniciat"
 
 msgid "DMDSERVER started"
-msgstr "DMDSERVER engegat"
+msgstr "DMDSERVER encès"
 
 msgid "MULTISCREENS"
 msgstr "MULTIPLES PANTALLES"
@@ -2065,7 +2065,7 @@ msgid "FORMAT A DISK"
 msgstr "FORMATAR UN DISC"
 
 msgid "CLEAN GAMELISTS & REMOVE UNUSED MEDIA"
-msgstr "NETEJAR GAMELISTS I ELIMINAR CONTINGUTS NO USATS"
+msgstr "NETEJAR LLISTES DE JOCS I ELIMINAR CONTINGUTS NO USATS"
 
 msgid "Remove unused entries, and clean references to missing medias."
 msgstr ""
@@ -2076,7 +2076,7 @@ msgid "Cleaning"
 msgstr "Netejant"
 
 msgid "RESET GAMELISTS USAGE DATA"
-msgstr "RESTABLEIX LES DADES D'ÚS DE LES LISTES DE JOCS"
+msgstr "RESTABLEIX LES DADES D'ÚS DE LES LLISTES DE JOCS"
 
 msgid "Reset values of GameTime, PlayCount and LastPlayed metadata."
 msgstr ""
@@ -2135,7 +2135,7 @@ msgid "SAVE METADATA ON EXIT"
 msgstr "DESAR METADADES AL TANCAR"
 
 msgid "PARSE GAMELISTS ONLY"
-msgstr "INTERPRETAR NOMÉS GAMELISTS"
+msgstr "INTERPRETAR NOMÉS LLISTES DE JOCS"
 
 msgid "Debug tool: Don't check if the ROMs actually exist. Can cause problems!"
 msgstr ""
@@ -2219,8 +2219,8 @@ msgstr "PRECÀRREGA D'ELEMENTS D'IU EN INICIAR EL SISTEMA"
 msgid ""
 "Reduces lag when entering gamelists from the system menu, increases boot time"
 msgstr ""
-"Redueix la latència quan s'introdueixen gamelists des del menú de sistema; "
-"incrementa el temps d'arrencada"
+"Redueix la latència quan s'introdueixen llistes de jocs des del menú de "
+"sistema; incrementa el temps d'arrencada"
 
 msgid "PRELOAD METADATA MEDIA ON BOOT"
 msgstr "PRE-CARREGAR METADADES DE CONTINGUTS EN INICIAR EL SISTEMA"
@@ -2502,10 +2502,10 @@ msgstr ""
 "evitar ometre'ls. Pot produïr aturades."
 
 msgid "VARIABLE REFRESH RATE (G-SYNC, FREESYNC)"
-msgstr "TASA DE REFRESC VARIABLE (G-SYNC; FREESYNC)"
+msgstr "FREQÜÈNCIA DE MOSTRATGE VARIABLE (G-SYNC; FREESYNC)"
 
 msgid "VARIABLE REFRESH RATE"
-msgstr "TASA DE REFRESC VARIABLE"
+msgstr "FREQÜÈNCIA DE MOSTRATGE VARIABLE"
 
 msgid ""
 "Don't deviate from core requested timing. G-Sync, FreeSync, HDMI 2.1 VRR."
@@ -2662,13 +2662,13 @@ msgid "PER SYSTEM ADVANCED CONFIGURATION"
 msgstr "ADMINISTRACIÓ AVANÇADA PER SISTEMA"
 
 msgid "SCRAPER IS RUNNING. DO YOU WANT TO STOP IT?"
-msgstr "El RASPADOR S'ESTÀ EXECUTANT. VOLS PARAR-LO?"
+msgstr "S’ESTÀ OBTENINT INFORMACIÓ DELS JOCS. VOLS PARAR EL PROCÉS?"
 
 msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
 msgstr "LA VALIDACIÓ DE JOCS S'ESTÀ REALITZANT. VOL ATURAR-LA?"
 
 msgid "REALLY UPDATE GAMELISTS?"
-msgstr "REALMENT VOL ACTUALITZAR LES GAMELISTS?"
+msgstr "REALMENT VOLS ACTUALITZAR LES LLISTES DE JOCS?"
 
 msgid "Emulator"
 msgstr "Emulador"
@@ -2875,7 +2875,7 @@ msgid "HOSTNAME"
 msgstr "NOM DE LA MÀQUINA"
 
 msgid "ENABLE WIFI"
-msgstr "ACTIVA EL WIFI"
+msgstr "ACTIVAR WIFI"
 
 msgid "WIFI SSID"
 msgstr "SSID DEL WIFI"
@@ -2923,25 +2923,25 @@ msgid "ENABLE PLANE MODE"
 msgstr "ACTIVAR MODE AVIÓ"
 
 msgid "RESTART SYSTEM"
-msgstr "REINICIA EL SISTEMA"
+msgstr "REINICIAR EL SISTEMA"
 
 msgid "REALLY RESTART?"
 msgstr "ESTEU SEGUR QUE VOLEU REINICIAR?"
 
 msgid "SUSPEND SYSTEM"
-msgstr "SUSPÉN EL SISTEMA"
+msgstr "SUSPENDRE EL SISTEMA"
 
 msgid "REALLY SUSPEND ?"
 msgstr "ESTÀ SEGUR DE VOLER SUSPENDRE?"
 
 msgid "SHUTDOWN SYSTEM"
-msgstr "APAGA EL SISTEMA"
+msgstr "APAGAR EL SISTEMA"
 
 msgid "REALLY SHUTDOWN?"
 msgstr "ESTEU SEGUR DE VOLER APAGAR?"
 
 msgid "FAST SHUTDOWN SYSTEM"
-msgstr "APAGA EL SISTEMA RÀPIDAMENT"
+msgstr "APAGAR EL SISTEMA RÀPIDAMENT"
 
 msgid "Shutdown without saving metadata."
 msgstr "Apaga el sistema sense desar metadades."
@@ -2950,10 +2950,10 @@ msgid "REALLY SHUTDOWN WITHOUT SAVING METADATA?"
 msgstr "ESTEU SEGUR QUE VOLEU APAGAR SENSE DESAR LES METADADES?"
 
 msgid "QUIT EMULATIONSTATION"
-msgstr "SORTIR DE EMULATIONSTATION"
+msgstr "SORTIR D’EMULATIONSTATION"
 
 msgid "REALLY QUIT?"
-msgstr "ESTÀ SEGUR DE VOLER SORTIR?"
+msgstr "ESTÀS SEGUR DE VOLER SORTIR?"
 
 msgid "AUTO SAVE/LOAD ON GAME LAUNCH"
 msgstr "DESA / CARREGA AUTOMÀTICAMENT"
@@ -3044,8 +3044,8 @@ msgid ""
 "SOME FILES YOU LINKED ARE LOCATED OUTSIDE THE GAMELIST PATH.\n"
 "DO YOU WANT TO USE A COPY OF THESE FILES RELATIVE TO THE GAMELIST ?"
 msgstr ""
-"ALGUNS DELS ARXIUS QUE HA VINCULAT ESTÀN UBICATS FORA DE LA RUTA DE "
-"GAMELISTS.\n"
+"ALGUNS DELS ARXIUS QUE HA VINCULAT ESTÀN UBICATS FORA DE LA RUTA DE LLISTES "
+"DE JOCS.\n"
 "VOL USAR UNA CÒPIA D'AQUESTS ARXIUS RELATIVA A LA MATEIXA?"
 
 msgid "FILE BROWSER"
@@ -3178,16 +3178,16 @@ msgid "INVALID CREDENTIALS"
 msgstr "CREDENCIALS NO VÀLIDES"
 
 msgid "SCRAPING"
-msgstr "OBTENINT CONTINGUTS"
+msgstr "OBTENINT INFORMACIÓ DELS JOCS"
 
 msgid "SCRAPE FAILED"
-msgstr "OBTENCIÓ DE CONTINGUTS FALLIDA"
+msgstr "EL PROCÉS D’OBTENCIÓ D’INFORMACIÓ DELS JOCS HA FALLAT"
 
 msgid "SCRAPING FINISHED"
-msgstr "OBTENCIÓ DE CONTINGUTS FINALITZADA"
+msgstr "EL PROCÉS D’OBTENCIÓ D’INFORMACIÓ DELS JOC HA FINALITZAT"
 
 msgid "UPDATE GAMELISTS TO APPLY CHANGES."
-msgstr "ACTUALITZI LES GAMELISTS PER A APLICAR ELS CANVIS."
+msgstr "ACTUALITZA LES LLISTES DE JOCS PER A APLICAR ELS CANVIS."
 
 msgid "DOWNLOADING"
 msgstr "DESCARREGANT"
@@ -3310,7 +3310,7 @@ msgid "enter path to alt boxart"
 msgstr "introdueix la ruta de la capsa alternativa"
 
 msgid "Box backside"
-msgstr "Part posterior de la causa"
+msgstr "Part posterior de la capsa"
 
 msgid "enter path to box background"
 msgstr "introdueix la ruta de la part posterior de la capsa"
@@ -3506,7 +3506,7 @@ msgstr[0] "Aquesta col·lecció conté %i joc:%s"
 msgstr[1] "Aquesta col·lecció conté %i jocs, incloent:%s"
 
 msgid "INVALID CONTENT"
-msgstr "CONTINGUT INVÀLID"
+msgstr "CONTINGUT NO VÀLID"
 
 msgid ""
 "A valid account is required. Please register an account on https://"

@@ -2015,16 +2015,16 @@ msgid "VRAM LIMIT"
 msgstr "LIMIT VRAM"
 
 msgid "SHOW FRAMERATE"
-msgstr "POKAŻ FPS"
+msgstr "POKAŻ KL/S"
 
 msgid "Also turns on the emulator's native FPS counter, if available."
-msgstr "Włącza również natywny licznik FPS emulatora, jeśli jest dostępny."
+msgstr "Włącza również natywny licznik KL/S emulatora, jeśli jest dostępny."
 
 msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "LIMIT KL/S"
 
 msgid "OVERSCAN"
 msgstr "PRZESKALOWANIE"

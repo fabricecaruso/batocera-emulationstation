@@ -2026,7 +2026,7 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "LIMITE DE FPS"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2273,10 +2273,10 @@ msgid "UPDATER IS ALREADY RUNNING"
 msgstr "A ATUALIZAÇÃO JÁ ESTÁ EM CURSO"
 
 msgid "START LOCAL MEDIA UPDATE"
-msgstr ""
+msgstr "INICIAR ATUALIZAÇÃO MULTIMÉDIA LOCAL"
 
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
-msgstr ""
+msgstr "ATUALIZAR A PARTIR DOS CONTEÚDOS MULTIMÉDIA LOCAIS?"
 
 msgid "LANGUAGE"
 msgstr "IDIOMA"

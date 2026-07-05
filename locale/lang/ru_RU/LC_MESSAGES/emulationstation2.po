@@ -2022,7 +2022,7 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "ЛИМИТ FPS"
 
 msgid "OVERSCAN"
 msgstr "ВЫЛЕТЫ РАЗВЁРТКИ"
