@@ -1587,6 +1587,16 @@ void ApiSystem::setLEDColours(int red, int green, int blue)
 	if (mSystemLedType == LED_TYPE_NONE)
 		return;
 
+	// We allow this check to be bypassed ONLY if we are turning the LEDs OFF (red=0, green=0, blue=0).
+	if (red != 0 || green != 0 || blue != 0)
+	{
+		std::string currentMode = SystemConf::getInstance()->get("led.mode");
+		if (currentMode == "rainbow" || currentMode == "chroma" || currentMode == "pulse")
+		{
+			return; 
+		}
+	}
+
     // Ensure RGB values are within valid range
 	if (red < 0) red = 0;
     if (red > 255) red = 255;
