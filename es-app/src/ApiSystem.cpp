@@ -252,14 +252,44 @@ std::pair<std::string, int> ApiSystem::updateSystem(const std::function<void(con
 {
 	LOG(LogDebug) << "ApiSystem::updateSystem";
 
-	std::string updatecommand = "batocera-upgrade --upgrade";
-	if(fromlocalmedia) {
-	  updatecommand = "batocera-upgrade --media-upgrade --media";
+	std::string upgradeScriptPath = "batocera-upgrade";
+
+	// Fetch the latest script from GitHub if performing an online upgrade
+	if (!fromlocalmedia)
+	{
+		if (func != nullptr)
+			func(_("Checking for latest upgrade script..."));
+
+		std::string downloadCommand = "curl --connect-timeout 10 -m 30 -L -f -s -o /tmp/batocera-upgrade "
+		                              "https://github.com/batocera-linux/batocera.linux/raw/refs/heads/master/package/batocera/core/batocera-scripts/scripts/batocera-upgrade "
+		                              "&& chmod +x /tmp/batocera-upgrade";
+		
+		int downloadRes = system(downloadCommand.c_str());
+		if (downloadRes == 0 && Utils::FileSystem::exists("/tmp/batocera-upgrade"))
+		{
+			LOG(LogInfo) << "Successfully fetched the latest batocera-upgrade script from GitHub.";
+			upgradeScriptPath = "/tmp/batocera-upgrade";
+		}
+		else
+		{
+			LOG(LogWarning) << "Failed to fetch latest upgrade script from GitHub, falling back to built-in version.";
+		}
+	}
+
+	std::string updatecommand = upgradeScriptPath + " --upgrade";
+	if (fromlocalmedia) {
+		updatecommand = upgradeScriptPath + " --media-upgrade --media";
 	}
 
 	FILE *pipe = popen(updatecommand.c_str(), "r");
 	if (pipe == nullptr)
+	{
+		// Clean up the downloaded script if we failed to execute popen
+		if (upgradeScriptPath == "/tmp/batocera-upgrade") {
+			Utils::FileSystem::removeFile("/tmp/batocera-upgrade");
+		}
 		return std::pair<std::string, int>(std::string("Cannot call update command"), -1);
+	}
 	
 	char line[1024] = "";
 	FILE *flog = fopen(Utils::FileSystem::combine(Paths::getLogPath(), "batocera-upgrade.log").c_str(), "w");
@@ -274,6 +304,11 @@ std::pair<std::string, int> ApiSystem::updateSystem(const std::function<void(con
 	}
 
 	int exitCode = WEXITSTATUS(pclose(pipe));
+
+	// Clean up the temporary script to free RAM disk space
+	if (upgradeScriptPath == "/tmp/batocera-upgrade") {
+		Utils::FileSystem::removeFile("/tmp/batocera-upgrade");
+	}
 
 	if (flog != NULL)
 	{
