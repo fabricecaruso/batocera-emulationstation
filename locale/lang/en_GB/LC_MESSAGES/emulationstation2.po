@@ -2420,6 +2420,21 @@ msgstr "LED HARDWARE"
 msgid "ENABLE LED"
 msgstr ""
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "LED BRIGHTNESS"
 
@@ -2449,6 +2464,14 @@ msgstr "Require a password for accessing the network share."
 
 msgid "ROOT PASSWORD"
 msgstr "ROOT PASSWORD"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "LATENCY REDUCTION"
@@ -3522,6 +3545,9 @@ msgstr "CORE IS MISSING"
 
 msgid "UKNOWN ERROR"
 msgstr "UKNOWN ERROR"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "Collections"

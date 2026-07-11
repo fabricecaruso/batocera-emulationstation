@@ -2431,6 +2431,21 @@ msgstr "LED HARDWARE"
 msgid "ENABLE LED"
 msgstr "ВКЛЮЧИТЬ LED"
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "LED ЯРКОСТЬ"
 
@@ -2460,6 +2475,14 @@ msgstr "Требовать пароль для доступа к сетевой 
 
 msgid "ROOT PASSWORD"
 msgstr "ПАРОЛЬ АДМИНИСТРАТОРА"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "УМЕНЬШЕНИЕ ЗАДЕРЖКИ"
@@ -3536,6 +3559,9 @@ msgstr "ЯДРО ОТСУТСТВУЕТ"
 
 msgid "UKNOWN ERROR"
 msgstr "НЕИЗВЕСТНАЯ ОШИБКА"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "Коллекции"

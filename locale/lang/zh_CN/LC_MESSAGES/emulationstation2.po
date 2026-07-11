@@ -2401,6 +2401,21 @@ msgstr "LED硬件"
 msgid "ENABLE LED"
 msgstr "启用LED"
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "LED亮度"
 
@@ -2430,6 +2445,14 @@ msgstr "访问网络共享需要密码。"
 
 msgid "ROOT PASSWORD"
 msgstr "管理员密码"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "减少延迟"
@@ -3497,6 +3520,9 @@ msgstr "核心缺失"
 
 msgid "UKNOWN ERROR"
 msgstr "未知错误"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "合辑"

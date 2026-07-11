@@ -390,103 +390,103 @@ msgid "UNABLE TO ACTIVATE RETROACHIEVEMENTS:"
 msgstr "IMPOSSIBILE ATTIVARE I TROFEI:"
 
 msgid "KEYBOARDTOPADS"
-msgstr ""
+msgstr "KEYBOARDTOPADS"
 
 msgid "HOTKEYS"
-msgstr ""
+msgstr "HOTKEYS"
 
 msgid "KEYS DEFINED BUT JOYSTICK NOT NAMED"
-msgstr ""
+msgstr "TASTI DEFINITI MA MANCA NOME JOYSTICK"
 
 msgid "JOYSTICK NAMED BUT NO KEYS DEFINED"
-msgstr ""
+msgstr "JOYSTICK CON NOME MA TASTI NON DEFINITI"
 
 msgid "UNPLUG AND REPLUG THE DEVICE TO APPLY"
-msgstr ""
+msgstr "DISCONNETTI E RICONNETTI IL DISPOSITIVO"
 
 msgid "go back"
 msgstr "torna indietro"
 
 msgid "JOYSTICK NAME"
-msgstr ""
+msgstr "NOME JOYSTICK"
 
 msgid "PRESS A KEY OR WAIT 4 SECONDS TO CLEAR"
-msgstr ""
+msgstr "PREMI UN TASTO O ASPETTA 4 SECONDI PER CANCELLARE"
 
 msgid "OVERLAYS"
-msgstr ""
+msgstr "OVERLAYS"
 
 msgid "BRIGHTNESS CYCLE"
-msgstr ""
+msgstr "CICLO LUMINOSITA'"
 
 msgid "CONTROL CENTER"
-msgstr ""
+msgstr "CENTRO DI CONTROLLO"
 
 msgid "EXIT"
-msgstr ""
+msgstr "USCITA"
 
 msgid "PAUSE"
-msgstr ""
+msgstr "PAUSA"
 
 msgid "COIN"
-msgstr ""
+msgstr "MONETA"
 
 msgid "FAST FORWARD"
-msgstr ""
+msgstr "AVANZAMENTO VELOCE"
 
 msgid "NEXT DISK"
-msgstr ""
+msgstr "PROSSIMO DISCO"
 
 msgid "NEXT SLOT"
-msgstr ""
+msgstr "PROSSIMO SLOT"
 
 msgid "PREVIOUS SLOT"
-msgstr ""
+msgstr "SLOT PRECEDENTE"
 
 msgid "RESET"
 msgstr "RESETTA"
 
 msgid "SAVE STATE"
-msgstr ""
+msgstr "SALVA STATO"
 
 msgid "RESTORE STATE"
-msgstr ""
+msgstr "RIPRISTINA STATO"
 
 msgid "REWIND"
 msgstr "RIAVVOLGI"
 
 msgid "SCREEN LAYOUT"
-msgstr ""
+msgstr "ARRANGIAMENTO SCHERMO"
 
 msgid "SCREENSHOT"
 msgstr "SCREENSHOT"
 
 msgid "SWAP SCREEN"
-msgstr ""
+msgstr "SCAMBIA SCHERMO"
 
 msgid "TRANSLATION"
-msgstr ""
+msgstr "TRADUZIONE"
 
 msgid "VOLUME DOWN"
-msgstr ""
+msgstr "MENO VOLUME"
 
 msgid "VOLUME UP"
-msgstr ""
+msgstr "PIU' VOLUME"
 
 msgid "VOLUME MUTE"
-msgstr ""
+msgstr "VOLUME MUTO"
 
 msgid "START RECORDING"
-msgstr ""
+msgstr "INIZIA REGISTRAZIONE"
 
 msgid "STOP RECORDING"
-msgstr ""
+msgstr "INTERROMPI REGISTRAZIONE"
 
 msgid "KEYBOARD TOGGLE"
-msgstr ""
+msgstr "ABULITA TASTIERA"
 
 msgid "KEY ASSIGNED TWICE"
-msgstr ""
+msgstr "TASTO ASSEGNATO DUE VOLTE"
 
 msgid "ZOOM OUT"
 msgstr "RIDUCI"
@@ -903,7 +903,7 @@ msgstr ""
 "SEI SICURO?"
 
 msgid "NFC"
-msgstr ""
+msgstr "NFC"
 
 msgid "WRITE AN NFC TAG FOR THIS GAME"
 msgstr "SCRIVI UN TAG NFC PER QUESTO GIOCO"
@@ -993,10 +993,10 @@ msgid "BY MANUFACTURER"
 msgstr "PER PRODUTTORE"
 
 msgid "BY HARDWARE TYPE THEN ALPHABETICALLY"
-msgstr ""
+msgstr "PER TIPO HARDWARE E POI ALFABETICAMENTE"
 
 msgid "BY HARDWARE TYPE THEN YEAR"
-msgstr ""
+msgstr "PER TYPO HARDWARE E POI ANNO"
 
 msgid "BY MANUFACTURER AND TYPE"
 msgstr "PER PRODUTTORE E TIPOLOGIA"
@@ -1144,7 +1144,7 @@ msgid "SHOW CONTROLLER BATTERY LEVEL"
 msgstr "MOSTRA LIVELLO BATTERIA DEL CONTROLLER"
 
 msgid "SHOW GUN NOTIFICATIONS"
-msgstr ""
+msgstr "MOSTRA NOTIFICHE PISTOLA"
 
 msgid "DRAW GUN CROSSHAIR"
 msgstr "DISEGNA MIRINO"
@@ -1153,13 +1153,13 @@ msgid "BEHAVIOR"
 msgstr "COMPORTAMENTO"
 
 msgid "JOYSTICKS HOTKEYS"
-msgstr ""
+msgstr "HOTKEYS DEI JOYSTICKS"
 
 msgid "RESTRICT JOYSTICKS HOTKEYS TO EXIT"
-msgstr ""
+msgstr "LIMITA HOTKEYS DEI JOYSTICKS ALL'USCITA"
 
 msgid "GLOBAL HOTKEYS"
-msgstr ""
+msgstr "HOTKEYS GLOBALI"
 
 msgid "default"
 msgstr "default"
@@ -1168,46 +1168,46 @@ msgid "NOT CONNECTED"
 msgstr "NON CONNESSO"
 
 msgid "SOUTH"
-msgstr ""
+msgstr "SUD"
 
 msgid "EAST"
-msgstr ""
+msgstr "EST"
 
 msgid "NORTH"
-msgstr ""
+msgstr "NORD"
 
 msgid "WEST"
-msgstr ""
+msgstr "OVEST"
 
 msgid "D-PAD UP"
-msgstr ""
+msgstr "D-PAD SU"
 
 msgid "D-PAD DOWN"
-msgstr ""
+msgstr "D-PAD GIU"
 
 msgid "D-PAD LEFT"
-msgstr ""
+msgstr "D-PAD SINISTRA"
 
 msgid "D-PAD RIGHT"
-msgstr ""
+msgstr "D-PAD DESTRA"
 
 msgid "LEFT SHOULDER"
-msgstr ""
+msgstr "SPALLA SINISTRA"
 
 msgid "RIGHT SHOULDER"
-msgstr ""
+msgstr "SPALLA DESTRA"
 
 msgid "LEFT TRIGGER"
-msgstr ""
+msgstr "GRILETTO SINISTRO"
 
 msgid "RIGHT TRIGGER"
-msgstr ""
+msgstr "GRILLETTO DESTRO"
 
 msgid "LEFT STICK PRESS"
-msgstr ""
+msgstr "PREMI ANALOGICO SINISTRO"
 
 msgid "RIGHT STICK PRESS"
-msgstr ""
+msgstr "PREMMI ANALOGICO DESTRO"
 
 msgid "HOTKEY"
 msgstr "HOTKEY"
@@ -1216,19 +1216,19 @@ msgid "DEFAULT"
 msgstr "DEFAULT"
 
 msgid "NO DEVICE FOUND (JAMMASD, IPAC, ...)"
-msgstr ""
+msgstr "NESSUN DISPOSITIVO TROVATO (JAMMASD, IPAC, ...)"
 
 msgid "DECLARE A NEW GLOBAL HOTKEY"
-msgstr ""
+msgstr "DICHIARA UN NUOVO HOTKEY GLOBALE"
 
 msgid "YOU'VE 4 SECONDS TO PRESS EXACTLY 2 TIMES THE GLOBAL HOTKEY"
-msgstr ""
+msgstr "HAI 4 SECONDI PER PREMERE ESATTAMENTE 2 VOLTA L'HOTKEY GLOBALE"
 
 msgid "NO GLOBAL HOTKEY DETECTED"
-msgstr ""
+msgstr "NESSUN HOTKEY GLOBALE RILEVATO"
 
 msgid "MORE THAN ONE GLOBAL HOTKEY DETECTED"
-msgstr ""
+msgstr "RILEVATO PIU' DI UN HOTKEY GLOBALE"
 
 msgid "BORDER SIZE"
 msgstr "DIMENSIONI BORDO"
@@ -1387,10 +1387,10 @@ msgid "SEARCHING WI-FI NETWORKS"
 msgstr "RICERCA RETI WIFI"
 
 msgid "PARIS"
-msgstr ""
+msgstr "PARIGI"
 
 msgid "OSAKA"
-msgstr ""
+msgstr "OSAKA"
 
 msgid "SEOUL"
 msgstr "SEOUL"
@@ -1576,10 +1576,10 @@ msgid "PADTOKEY SETTINGS"
 msgstr "IMPOSTAZIONI PADTOKEY"
 
 msgid "MANUAL SCRAPE"
-msgstr ""
+msgstr "SCRAPE MANUALE"
 
 msgid "INCLUDED SCRAPERS"
-msgstr ""
+msgstr "SCRAPERS INCLUSI"
 
 msgid "SCREENSCRAPER"
 msgstr "SCREENSCRAPER"
@@ -2019,7 +2019,7 @@ msgid "VSYNC"
 msgstr "VSYNC"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "LIMITE FPS"
 
 msgid "OVERSCAN"
 msgstr "OVERSCAN"
@@ -2236,7 +2236,7 @@ msgid "OPTIMIZE VIDEO VRAM USAGE"
 msgstr "OTTIMIZZAZIONE VIDEO IN VRAM"
 
 msgid "USE FILESYSTEM CACHE"
-msgstr ""
+msgstr "USA CACHE FILESYSTEM"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "RIAVVIO DEL SISTEMA NECESSARIO PER APPLICARE LA NUOVA CONFIGURAZIONE"
@@ -2266,10 +2266,10 @@ msgid "UPDATER IS ALREADY RUNNING"
 msgstr "L'AGGIORNAMENTO È GIÀ IN ESECUZIONE"
 
 msgid "START LOCAL MEDIA UPDATE"
-msgstr ""
+msgstr "UNIZA AGGIORNAMENTO VIA MEDIA LOCALI"
 
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
-msgstr ""
+msgstr "SEI SICURO DI VOLER AGGIORNARE TRAMITE MEDIA LOCALI?"
 
 msgid "LANGUAGE"
 msgstr "LINGUA"
@@ -2278,15 +2278,17 @@ msgid "LANGUAGE (REGION)"
 msgstr "LINGUA (REGIONE)"
 
 msgid "KEYBOARD LAYOUT"
-msgstr ""
+msgstr "ARRANGIAMENTO TASTIERA"
 
 msgid "KEYBOARD VARIANT"
-msgstr ""
+msgstr "VARIANTE TASTIERA"
 
 msgid ""
 "Select the physical keyboard layout. A reboot may be required for changes to "
 "take full effect."
 msgstr ""
+"Seleziona l'arrangiamento della tastiera. Puo' essere necessario il riavvio "
+"perche' i cambiamenti abbiano effetto."
 
 msgid "SELECT YOUR TIME ZONE"
 msgstr "SELEZIONA IL TUO FUSO ORARIO"
@@ -2426,6 +2428,21 @@ msgid "LED HARDWARE"
 msgstr "HARDWARE LED"
 
 msgid "ENABLE LED"
+msgstr "ABILITA LED"
+
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
 msgstr ""
 
 msgid "LED BRIGHTNESS"
@@ -2438,10 +2455,10 @@ msgid "STORAGE DEVICE"
 msgstr "UNITÀ DI ARCHIVIAZIONE"
 
 msgid "EJECT AN EXTRA DISK"
-msgstr ""
+msgstr "ESPELLI UN DISCO EXTRA"
 
 msgid "EXTRA DRIVE FILESYSTEM TYPE"
-msgstr ""
+msgstr "TIPO DI FILESYSTEM DEL DRIVE EXTRA"
 
 msgid "ADVANCED"
 msgstr "AVANZATE"
@@ -2457,6 +2474,14 @@ msgstr "Richiedi una password per accedere alla rete condivisa."
 
 msgid "ROOT PASSWORD"
 msgstr "PASSWORD DI ROOT"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "RIDUZIONE LATENZA"
@@ -2705,7 +2730,7 @@ msgid "SHOW '..' PARENT FOLDER"
 msgstr "MOSTRA '..' CARTELLA PRINCIPALE"
 
 msgid "ICONS"
-msgstr ""
+msgstr "ICONE"
 
 msgid "AFTER NAME"
 msgstr "DOPO IL NOME"
@@ -2714,7 +2739,7 @@ msgid "BEFORE NAME"
 msgstr "PRIMA DEL NOME"
 
 msgid "SHOW TAGS ICONS"
-msgstr ""
+msgstr "MOSTRA ICONE TAGS"
 
 msgid "SHOW REGION FLAG"
 msgstr "ICONA LINGUA DEI GIOCHI"
@@ -2867,10 +2892,10 @@ msgid "WIFI KEY"
 msgstr "CHIAVE WIFI"
 
 msgid "WIFI COUNTRY"
-msgstr ""
+msgstr "PAESE WIFI"
 
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 msgid "WIFI ENABLED"
 msgstr "WIFI ATTIVO"
@@ -2997,31 +3022,31 @@ msgid "ARE YOU SURE YOU WANT TO FORMAT THIS DRIVE?"
 msgstr "SEI SICURO DI VOLER FORMATTARE QUESTO DISPOSITIVO?"
 
 msgid "SAFELY EJECT A DISK"
-msgstr ""
+msgstr "ESPELLI DISCO IN SICUREZZA"
 
 msgid "MERGED DRIVE"
-msgstr ""
+msgstr "DISCO UNITO"
 
 msgid "NO MERGED DRIVES FOUND"
-msgstr ""
+msgstr "MESSUN DISCO UNITO RILEVATO"
 
 msgid "EJECT"
-msgstr ""
+msgstr "ESPELLI"
 
 msgid "NO DRIVE SELECTED"
-msgstr ""
+msgstr "NESSUN DRIVE SELEZIONATO"
 
 msgid "Ejecting..."
-msgstr ""
+msgstr "Espulsione..."
 
 msgid "EDIT METADATA"
 msgstr "MODIFICA LE INFORMAZIONI"
 
 msgid "TAGS"
-msgstr ""
+msgstr "TAGS"
 
 msgid "GENRES"
-msgstr "GENERE"
+msgstr "GENERI"
 
 msgid ""
 "SOME FILES YOU LINKED ARE LOCATED OUTSIDE THE GAMELIST PATH.\n"
@@ -3202,10 +3227,10 @@ msgid "enter game genre"
 msgstr "inserisci genere"
 
 msgid "Tags"
-msgstr ""
+msgstr "Tags"
 
 msgid "tags"
-msgstr ""
+msgstr "tags"
 
 msgid "Sort name"
 msgstr "Criterio di ordinamento"
@@ -3409,7 +3434,7 @@ msgid "Screenscraper Game ID"
 msgstr "ID gioco Screenscraper"
 
 msgid "MultiDisk"
-msgstr ""
+msgstr "MultiDisk"
 
 msgid "Loading system config..."
 msgstr "Caricamento configurazione di sistema..."
@@ -3497,19 +3522,19 @@ msgstr ""
 "retroachievements.org"
 
 msgid "SLOW"
-msgstr ""
+msgstr "LENTO"
 
 msgid "NOT WORKING"
-msgstr ""
+msgstr "NON FUNZIONANTE"
 
 msgid "BUGGY"
-msgstr ""
+msgstr "DIFETTOSO"
 
 msgid "LIKED"
-msgstr ""
+msgstr "PIACIUTO"
 
 msgid "DISLIKED"
-msgstr ""
+msgstr "DISPIACIUTO"
 
 msgid "UPDATE AVAILABLE"
 msgstr "AGGIORNAMENTO DISPONIBILE"
@@ -3535,6 +3560,9 @@ msgstr "CORE MANCANTE"
 msgid "UKNOWN ERROR"
 msgstr "ERRORE SCONOSCIUTO"
 
+msgid "Checking for latest upgrade script..."
+msgstr ""
+
 msgid "Collections"
 msgstr "Collezioni"
 
@@ -3557,7 +3585,7 @@ msgid "GENRE"
 msgstr "GENERE"
 
 msgid "TAG"
-msgstr ""
+msgstr "TAG"
 
 msgid "FAMILY"
 msgstr "FAMIGLIA"
@@ -3858,70 +3886,70 @@ msgstr ""
 "Spara sui bersagli per calibrare"
 
 msgid "Reloaded the games list..."
-msgstr ""
+msgstr "Ricarica la lista dei giochi..."
 
 msgid "GAME DRIVE DETECTED"
-msgstr ""
+msgstr "DISCO GIOCO RILEVATO"
 
 msgid "DEVICE"
-msgstr ""
+msgstr "DISPOSITIVO"
 
 msgid "MODEL"
-msgstr ""
+msgstr "MODELLO"
 
 msgid "SIZE"
-msgstr ""
+msgstr "DIMENSIONE"
 
 msgid "MOUNT"
-msgstr ""
+msgstr "MONTAGGIO"
 
 msgid "Merge games from this drive partition now?"
-msgstr ""
+msgstr "Unisci i giochi da questa partizione disco adesso?"
 
 msgid "(This will also apply on future boots)"
-msgstr ""
+msgstr "(Questo verra' applicato anche ai prossimi riavvii)"
 
 msgid "Merge requested... Please wait."
-msgstr ""
+msgstr "Unione richiesta... Aspetta per favore."
 
 msgid "MERGE FAILED"
-msgstr ""
+msgstr "UNIONE FALLITA"
 
 msgid "Please check the logs."
-msgstr ""
+msgstr "Controlla i logs."
 
 msgid "NO, IGNORE THIS TIME"
-msgstr ""
+msgstr "NO, IGNORA QUESTA VOLTA"
 
 msgid "NO, IGNORE FOREVER"
-msgstr ""
+msgstr "NO< IGNORA PER SEMPRE"
 
 msgid "Adding drive to ignore list..."
-msgstr ""
+msgstr "Aggiungi drive alla lista da ignorare..."
 
 msgid "YES, MERGE DRIVE"
-msgstr ""
+msgstr "SI, UNISCI DRIVE"
 
 msgid "NEW DRIVE DETECTED"
-msgstr ""
+msgstr "NUOVO DRIVE RILEVATO"
 
 msgid "Format and prepare this drive for game storage?"
-msgstr ""
+msgstr "Formatta e prepara questo drive per contenere giochi?"
 
 msgid "(ALL EXISTING DATA WILL BE ERASED)"
-msgstr ""
+msgstr "(TUTTI I DATI ESISTENTI VERRANNO RIMOSSI)"
 
 msgid "Starting format process..."
-msgstr ""
+msgstr "Inizio processo di formattazione..."
 
 msgid "FORMAT FAILED"
-msgstr ""
+msgstr "FORMATTAZIONE FALLITA"
 
 msgid "YES, FORMAT & MERGE"
-msgstr ""
+msgstr "SI, FORMATTA & UNISCI"
 
 msgid "NO, IGNORE"
-msgstr ""
+msgstr "NO, IGNORA"
 
 #, c-format
 msgid "%d d"

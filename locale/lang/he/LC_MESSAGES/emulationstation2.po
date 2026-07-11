@@ -2392,6 +2392,21 @@ msgstr ""
 msgid "ENABLE LED"
 msgstr ""
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr ""
 
@@ -2421,6 +2436,14 @@ msgstr ""
 
 msgid "ROOT PASSWORD"
 msgstr "סיסמת שורש ROOT PASSWORD"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "הפחתת השהייה"
@@ -3486,6 +3509,9 @@ msgid "CORE IS MISSING"
 msgstr ""
 
 msgid "UKNOWN ERROR"
+msgstr ""
+
+msgid "Checking for latest upgrade script..."
 msgstr ""
 
 msgid "Collections"

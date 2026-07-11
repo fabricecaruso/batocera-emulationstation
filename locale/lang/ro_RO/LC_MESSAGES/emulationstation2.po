@@ -2449,6 +2449,21 @@ msgstr "LED HARDWARE"
 msgid "ENABLE LED"
 msgstr "ACTIVEAZĂ LED"
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "LUMINOZITATE LED"
 
@@ -2478,6 +2493,14 @@ msgstr "Necesită o parolă pentru a accesa datele din rețea."
 
 msgid "ROOT PASSWORD"
 msgstr "PAROLĂ ROOT"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "REDUCEREA LATENȚEI"
@@ -3557,6 +3580,9 @@ msgstr "NUCLEUL LIPSEȘTE"
 
 msgid "UKNOWN ERROR"
 msgstr "EROARE NECUNOSCUTĂ"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "Colecții"

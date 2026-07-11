@@ -2452,6 +2452,21 @@ msgstr "HARDWARE LED"
 msgid "ENABLE LED"
 msgstr "HABILITAR LED"
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "BRILHO LED"
 
@@ -2481,6 +2496,14 @@ msgstr "Solicitar uma senha para acessar o compartilhamento de rede."
 
 msgid "ROOT PASSWORD"
 msgstr "SENHA PRIMÁRIA (ROOT)"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "REDUÇÃO DE LATÊNCIA"
@@ -3560,6 +3583,9 @@ msgstr "ESTÁ FALTANDO NÚCLEO"
 
 msgid "UKNOWN ERROR"
 msgstr "ERRO DESCONHECIDO"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "Coleções"

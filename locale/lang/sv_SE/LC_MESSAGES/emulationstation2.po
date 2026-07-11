@@ -2435,6 +2435,21 @@ msgstr "LED-HÅRDVARA"
 msgid "ENABLE LED"
 msgstr "LED FÖR AKTIVERING"
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "LED-LJUSSTYRKA"
 
@@ -2464,6 +2479,14 @@ msgstr "Kräv ett lösenord för åtkomst till nätverksdelningen."
 
 msgid "ROOT PASSWORD"
 msgstr "ROOT-LÖSENORD"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "MINSKAD LATENSTID"
@@ -3540,6 +3563,9 @@ msgstr "KÄRNAN SAKNAS"
 
 msgid "UKNOWN ERROR"
 msgstr "OKÄNT FEL"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "Samlingar"

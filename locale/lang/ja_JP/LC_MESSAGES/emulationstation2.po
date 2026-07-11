@@ -2428,6 +2428,21 @@ msgstr "LED ハードウェア"
 msgid "ENABLE LED"
 msgstr " LED 有効"
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "LED 輝度"
 
@@ -2457,6 +2472,14 @@ msgstr "ネットワーク共有にアクセスするにはパスワードが必
 
 msgid "ROOT PASSWORD"
 msgstr "ルートパスワード"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "ちらつき軽減"
@@ -3531,6 +3554,9 @@ msgstr "コアがありません"
 
 msgid "UKNOWN ERROR"
 msgstr "不明なエラー"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "コレクション"

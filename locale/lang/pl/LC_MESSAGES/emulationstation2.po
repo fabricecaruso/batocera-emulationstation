@@ -2441,6 +2441,21 @@ msgstr "TWORZYWO DIODY"
 msgid "ENABLE LED"
 msgstr "WŁĄCZ LED"
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "JASNOŚĆ DIODY"
 
@@ -2470,6 +2485,14 @@ msgstr "Wymagaj hasła dostępu do udziału sieciowego."
 
 msgid "ROOT PASSWORD"
 msgstr "HASŁO ADMINISTRATORA"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "REDUKCJA OPÓŹNIEŃ"
@@ -3547,6 +3570,9 @@ msgstr "BRAK JĄDRA EMULATORA"
 
 msgid "UKNOWN ERROR"
 msgstr "NIEZNANY BŁĄD"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "Kolekcje"

@@ -2412,6 +2412,21 @@ msgstr ""
 msgid "ENABLE LED"
 msgstr ""
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr ""
 
@@ -2441,6 +2456,14 @@ msgstr "Χρειαζεται κωδικος εισοδου για προσβασ
 
 msgid "ROOT PASSWORD"
 msgstr "ΚΩΔΙΚΟΣ ΔΙΑΧΕΙΡΙΣΤΗ"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "ΜΕΙΩΣΗ LATENCY"
@@ -3512,6 +3535,9 @@ msgstr "ΛΕΙΠΕΙ Ο ΠΥΡΗΝΑΣ"
 
 msgid "UKNOWN ERROR"
 msgstr "ΑΓΝΩΣΤΟ ΛΑΘΟΣ"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "Συλλογες"

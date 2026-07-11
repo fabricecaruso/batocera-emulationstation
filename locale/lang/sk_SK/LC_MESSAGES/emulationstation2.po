@@ -2428,6 +2428,21 @@ msgstr "LED hardvér"
 msgid "ENABLE LED"
 msgstr "Povoliť LED"
 
+msgid "LED MODE"
+msgstr ""
+
+msgid "STATIC"
+msgstr ""
+
+msgid "RAINBOW"
+msgstr ""
+
+msgid "CHROMA"
+msgstr ""
+
+msgid "PULSE"
+msgstr ""
+
 msgid "LED BRIGHTNESS"
 msgstr "LED jasnosť"
 
@@ -2457,6 +2472,14 @@ msgstr "Vyžadovať heslo na prístup k sieťovému zdieľaniu."
 
 msgid "ROOT PASSWORD"
 msgstr "Heslo roota"
+
+msgid "CPU SECURITY MITIGATIONS"
+msgstr ""
+
+msgid ""
+"Disabling mitigations may improve performance on some systems at the cost of "
+"reduced protection against certain CPU vulnerabilities."
+msgstr ""
 
 msgid "LATENCY REDUCTION"
 msgstr "Redukcia latencie"
@@ -3535,6 +3558,9 @@ msgstr "Jadro chýba"
 
 msgid "UKNOWN ERROR"
 msgstr "Neznáma chyba"
+
+msgid "Checking for latest upgrade script..."
+msgstr ""
 
 msgid "Collections"
 msgstr "Kolekcie"
