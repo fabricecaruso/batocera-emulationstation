@@ -1,12 +1,10 @@
-# Davide Notaristefano <davide.notaristefano@gmail.com>, 2024.
-# AntonyBel <antolanzi@proton.me>, 2024
 msgid ""
 msgstr ""
 "Project-Id-Version: emulationstation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-15 23:48+0100\n"
 "PO-Revision-Date: 2024-05-03 17:32+0200\n"
-"Last-Translator: Davide Notaristefano <davide.notaristefano@gmail.com>\n"
+"Last-Translator: Luca Della Santina <luca.dellasantina@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -2452,19 +2450,19 @@ msgid "ENABLE LED"
 msgstr "ABILITA LED"
 
 msgid "LED MODE"
-msgstr ""
+msgstr "MODO LED"
 
 msgid "STATIC"
-msgstr ""
+msgstr "STATICO"
 
 msgid "RAINBOW"
-msgstr ""
+msgstr "ARCOBALENO"
 
 msgid "CHROMA"
-msgstr ""
+msgstr "CHROMA"
 
 msgid "PULSE"
-msgstr ""
+msgstr "PULSE"
 
 msgid "LED BRIGHTNESS"
 msgstr "LUMINOSITA' LED"
@@ -2497,12 +2495,14 @@ msgid "ROOT PASSWORD"
 msgstr "PASSWORD DI ROOT"
 
 msgid "CPU SECURITY MITIGATIONS"
-msgstr ""
+msgstr "MITIGAZIONE SICUREZZA CPU"
 
 msgid ""
 "Disabling mitigations may improve performance on some systems at the cost of "
 "reduced protection against certain CPU vulnerabilities."
 msgstr ""
+"Quando disabilitata puo' migliorare la performance su alcuni sistemi a "
+"costodi ridurre la protezione contro alcune vulnerabilita' della CPU"
 
 msgid "LATENCY REDUCTION"
 msgstr "RIDUZIONE LATENZA"
@@ -3582,7 +3582,7 @@ msgid "UKNOWN ERROR"
 msgstr "ERRORE SCONOSCIUTO"
 
 msgid "Checking for latest upgrade script..."
-msgstr ""
+msgstr "Ricerca dell'ultimo script di upgrade..."
 
 msgid "Collections"
 msgstr "Collezioni"
