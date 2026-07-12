@@ -49,10 +49,10 @@ private:
 class ThreadedUpdater
 {
 public:
-  ThreadedUpdater(Window* window, bool fromlocalmedia = false);
+  ThreadedUpdater(Window* window, const std::string source = "WWW");
   ~ThreadedUpdater();
 
-  void threadUpdate(bool fromlocalmedia);
+  void threadUpdate(const std::string source);
 
 private:
   std::thread*				mHandle;
@@ -61,4 +61,5 @@ private:
 
   void threadUpdate_network();
   void threadUpdate_fromlocalmedia();
+  void threadUpdate_torrent();
 };

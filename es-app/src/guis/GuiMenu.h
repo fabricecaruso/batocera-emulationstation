@@ -49,7 +49,7 @@ private:
         void openScreensaverOptions();  
         void openSoundSettings();
         void openUISettings();
-        void openUpdatesSettings();
+        void openUpdatesSettings(bool selectTorrentService = false);
         
         void openSystemSettings();
         void openGamesSettings();       

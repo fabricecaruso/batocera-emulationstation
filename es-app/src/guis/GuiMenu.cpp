@@ -1146,7 +1146,7 @@ void GuiMenu::openDeveloperSettings()
 	mWindow->pushGui(s);
 }
 
-void GuiMenu::openUpdatesSettings()
+void GuiMenu::openUpdatesSettings(bool selectTorrentService)
 {
 	GuiSettings *updateGui = new GuiSettings(mWindow, _("UPDATES & DOWNLOADS").c_str());
 
@@ -1244,10 +1244,66 @@ void GuiMenu::openUpdatesSettings()
 		    updateGui->addEntry(_("START LOCAL MEDIA UPDATE"), false, [this]
 		    {
 		      mWindow->pushGui(new GuiMsgBox(mWindow, _("REALLY UPDATE FROM LOCAL MEDIA?"),
-						     _("YES"), [this] { new ThreadedUpdater(mWindow, true); }, 
+						     _("YES"), [this] { new ThreadedUpdater(mWindow, "LOCAL"); }, 
 						     _("NO"), nullptr));
 		    });
 		  }
+	}
+
+	if (ApiSystem::getInstance()->isScriptingSupported(ApiSystem::UPGRADEVIATORRENT))
+	{
+	  updateGui->addGroup(_("SOFTWARE UPDATES VIA TORRENT"));
+
+	  // server
+	  bool service_torrent_status = false;
+	  auto services = ApiSystem::getInstance()->getServices();
+	  for(unsigned int i = 0; i < services.size(); i++) {
+	    if(services[i].enabled && services[i].name == "batocera_torrent") {
+	      service_torrent_status = true;
+	    }
+	  }
+	  auto server_switch = std::make_shared<SwitchComponent>(mWindow);
+	  server_switch->setState(service_torrent_status);
+
+	  updateGui->addWithLabel(_("SHARE UPDATES VIA TORRENT"), server_switch, selectTorrentService);
+
+	  server_switch->setOnChangedCallback([this, updateGui, service_torrent_status, server_switch]()
+	  {
+	    bool service_torrent_btn_enabled = server_switch->getState();
+	    if (service_torrent_btn_enabled != service_torrent_status)
+	      {
+		if(service_torrent_btn_enabled) {
+		  ApiSystem::getInstance()->enableService("batocera_torrent", true);
+		  mWindow->displayNotificationMessage(_U("\uF011  ") + _("Torrent update service started"));
+		} else {
+		  ApiSystem::getInstance()->enableService("batocera_torrent", false);
+		  mWindow->displayNotificationMessage(_U("\uF011  ") + _("Torrent update service stopped"));
+		}
+
+		delete updateGui;
+		openUpdatesSettings(true);
+	      }
+	  });
+
+	  // menu in case the service is up
+	  if(service_torrent_status) {
+	    std::string torrent_status = ApiSystem::getInstance()->torrentStatus();
+
+	    if (ApiSystem::getInstance()->torrentIsReadyForUpdate())
+	      {
+		//updateGui->addEntry(_("START UPDATE FROM TORRENT FILE"), false, [this]
+		updateGui->addWithLabel(_("START UPDATE FROM TORRENT FILE"),
+					std::make_shared<TextComponent>(mWindow, torrent_status, ThemeData::getMenuTheme()->Text.font, ThemeData::getMenuTheme()->Text.color),
+					false, [this]		
+		{
+		  mWindow->pushGui(new GuiMsgBox(mWindow, _("REALLY UPDATE FROM TORRENT FILE ?"),
+						 _("YES"), [this] { new ThreadedUpdater(mWindow, "TORRENT"); }, 
+						 _("NO"), nullptr));
+		});
+	      } else {
+	        updateGui->addWithLabel(_("DOWNLOAD STATUS"), std::make_shared<TextComponent>(mWindow, torrent_status, ThemeData::getMenuTheme()->Text.font, ThemeData::getMenuTheme()->Text.color));
+	    }
+	  }
 	}
 
 	mWindow->pushGui(updateGui);

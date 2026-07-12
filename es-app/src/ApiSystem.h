@@ -173,6 +173,7 @@ public:
 		WRITEPLANEMODE = 30,
 		BACKGLASS = 31,
 		NFC = 32,
+		UPGRADEVIATORRENT = 33,
 	};
 
 	virtual bool isScriptingSupported(ScriptId script);
@@ -213,6 +214,10 @@ public:
     virtual bool canLocalUpdate(); // update from a local media
 	virtual void setReadyFlag(bool ready = true);
 	virtual bool isReadyFlagSet();
+
+    virtual bool torrentIsReadyForUpdate();
+    virtual std::string torrentStatus();
+    virtual std::pair<std::string, int> torrentUpdateSystem(const std::function<void(const std::string)>& func = nullptr);
 
     virtual bool launchKodi(Window *window);
     bool launchFileManager(Window *window);
