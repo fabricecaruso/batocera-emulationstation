@@ -156,7 +156,7 @@ std::vector<HelpPrompt> GuiUpdate::getHelpPrompts()
 	return std::vector<HelpPrompt>();
 }
 
-ThreadedUpdater::ThreadedUpdater(Window* window, bool fromlocalmedia) : mWindow(window) {
+ThreadedUpdater::ThreadedUpdater(Window* window, const std::string source) : mWindow(window) {
   GuiUpdate::state = GuiUpdateState::State::UPDATER_RUNNING;
 
   mWndNotification = mWindow->createAsyncNotificationComponent();
@@ -164,8 +164,10 @@ ThreadedUpdater::ThreadedUpdater(Window* window, bool fromlocalmedia) : mWindow(
   auto label = Utils::String::format(_("UPDATING %s").c_str(), ApiSystem::getInstance()->getApplicationName().c_str());
   mWndNotification->updateTitle(_U("\uF019 ") + label);
 
-  if(fromlocalmedia) {
+  if(source == "LOCAL") {
     mHandle = new std::thread(&ThreadedUpdater::threadUpdate_fromlocalmedia, this);
+  } else if(source == "TORRENT") {
+    mHandle = new std::thread(&ThreadedUpdater::threadUpdate_torrent, this);
   } else {
     mHandle = new std::thread(&ThreadedUpdater::threadUpdate_network, this);
   }
@@ -177,38 +179,52 @@ ThreadedUpdater::~ThreadedUpdater() {
 }
 
 void ThreadedUpdater::threadUpdate_network() {
-  threadUpdate(false);
+  threadUpdate("WWW");
 }
 
 void ThreadedUpdater::threadUpdate_fromlocalmedia() {
-  threadUpdate(true);
+  threadUpdate("LOCAL");
 }
 
-void ThreadedUpdater::threadUpdate(bool fromlocalmedia) {
-	std::pair<std::string, int> updateStatus = ApiSystem::getInstance()->updateSystem([this](const std::string info)
-	{
-		auto pos = info.find(">>>");
-		if (pos != std::string::npos)
-		{
-			std::string percent(info.substr(pos));		
-			percent = Utils::String::replace(percent, ">", "");
-			percent = Utils::String::replace(percent, "%", "");
-			percent = Utils::String::replace(percent, " ", "");
+void ThreadedUpdater::threadUpdate_torrent() {
+  threadUpdate("TORRENT");
+}
 
-			int value = atoi(percent.c_str());
-
-			std::string text(info.substr(0, pos));
-			text = Utils::String::trim(text);
-
-			mWndNotification->updatePercent(value);
-			mWndNotification->updateText(text);
-		}
-		else
+void ThreadedUpdater::threadUpdate(const std::string source) {
+	std::pair<std::string, int> updateStatus;
+    
+	if(source == "TORRENT") {
+		updateStatus = ApiSystem::getInstance()->torrentUpdateSystem([this](const std::string info)
 		{
 			mWndNotification->updatePercent(-1);
 			mWndNotification->updateText(info);
-		}
-	}, fromlocalmedia);
+		});
+	} else {
+		updateStatus = ApiSystem::getInstance()->updateSystem([this](const std::string info)
+		{
+			auto pos = info.find(">>>");
+			if (pos != std::string::npos)
+			{
+				std::string percent(info.substr(pos));		
+				percent = Utils::String::replace(percent, ">", "");
+				percent = Utils::String::replace(percent, "%", "");
+				percent = Utils::String::replace(percent, " ", "");
+	
+				int value = atoi(percent.c_str());
+	
+				std::string text(info.substr(0, pos));
+				text = Utils::String::trim(text);
+	
+				mWndNotification->updatePercent(value);
+				mWndNotification->updateText(text);
+			}
+			else
+			{
+				mWndNotification->updatePercent(-1);
+				mWndNotification->updateText(info);
+			}
+		}, source == "LOCAL");
+	}
 
 	if (updateStatus.second == 0)
 	{

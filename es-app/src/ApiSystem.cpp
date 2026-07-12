@@ -423,6 +423,67 @@ bool ApiSystem::ping()
     return true;
 }
 
+bool ApiSystem::torrentIsReadyForUpdate() {
+  LOG(LogDebug) << "ApiSystem::torrentIsReadyForUpdate";
+
+  FILE *pipe = popen("batocera-upgrade-torrent --is-file-ready-to-update", "r");
+  if (pipe == NULL)
+    return false;
+
+  int res = WEXITSTATUS(pclose(pipe));
+  if (res == 0) 
+    {
+      LOG(LogInfo) << "Can update via torrent";
+      return true;
+    }
+
+  LOG(LogInfo) << "Cannot update via torrent";
+  return false;
+}
+
+std::string ApiSystem::torrentStatus() {
+  LOG(LogDebug) << "ApiSystem::torrentStatus";
+
+  std::vector<std::string> results = executeEnumerationScript("batocera-upgrade-torrent --status");
+  if (results.empty())
+    return "UNKNOWN";
+
+  return results[0];
+}
+
+std::pair<std::string, int> ApiSystem::torrentUpdateSystem(const std::function<void(const std::string)>& func)
+{
+	LOG(LogDebug) << "ApiSystem::torrentUpdateSystem";
+
+	std::string updatecommand = "batocera-upgrade-torrent --upgrade";
+
+	FILE *pipe = popen(updatecommand.c_str(), "r");
+	if (pipe == nullptr)
+		return std::pair<std::string, int>(std::string("Cannot call update command"), -1);
+	
+	char line[1024] = "";
+	FILE *flog = fopen(Utils::FileSystem::combine(Paths::getLogPath(), "batocera-upgrade-torrent.log").c_str(), "w");
+	while (fgets(line, 1024, pipe)) 
+	{
+		strtok(line, "\n");
+		if (flog != nullptr) 
+			fprintf(flog, "%s\n", line);
+
+		if (func != nullptr)
+			func(std::string(line));		
+	}
+
+	int exitCode = WEXITSTATUS(pclose(pipe));
+
+	if (flog != NULL)
+	{
+		fprintf(flog, "Exit code : %d\n", exitCode);
+		fclose(flog);
+	}
+
+	return std::pair<std::string, int>(std::string(line), exitCode);
+}
+
 bool ApiSystem::canLocalUpdate() {
 	LOG(LogDebug) << "ApiSystem::canMediaUpgrade";
 
@@ -2095,6 +2156,9 @@ bool ApiSystem::isScriptingSupported(ScriptId script)
 		break;
 	case ApiSystem::UPGRADE:
 		executables.push_back("batocera-upgrade");
+		break;
+	case ApiSystem::UPGRADEVIATORRENT:
+		executables.push_back("batocera-upgrade-torrent");
 		break;
 	case ApiSystem::SUSPEND:
 		return (Utils::FileSystem::exists("/usr/sbin/pm-suspend") && Utils::FileSystem::exists("/usr/bin/pm-is-supported") && executeScript("/usr/bin/pm-is-supported --suspend"));
