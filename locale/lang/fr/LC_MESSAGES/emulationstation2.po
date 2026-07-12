@@ -482,10 +482,10 @@ msgid "VOLUME MUTE"
 msgstr "SOURDINE"
 
 msgid "START RECORDING"
-msgstr ""
+msgstr "DÉMARRER L'ENREGISTREMENT"
 
 msgid "STOP RECORDING"
-msgstr ""
+msgstr "ARRÊTER L'ENREGISTREMENT"
 
 msgid "KEYBOARD TOGGLE"
 msgstr ""
@@ -2276,10 +2276,31 @@ msgid "UPDATER IS ALREADY RUNNING"
 msgstr "LA MISE À JOUR EST DÉJÀ EN COURS"
 
 msgid "START LOCAL MEDIA UPDATE"
-msgstr ""
+msgstr "LANCER LA MISE À JOUR DEPUIS LE MEDIA"
 
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
-msgstr ""
+msgstr "VOULEZ-VOUS VRAIMENT METTRE À JOUR DEPUIS LE MEDIA ?"
+
+msgid "SOFTWARE UPDATES VIA TORRENT"
+msgstr "MISES À JOUR LOGICIEL VIA TORRENT"
+
+msgid "SHARE UPDATES VIA TORRENT"
+msgstr "PARTAGER les MISES À JOUR VIA TORRENT"
+
+msgid "Torrent update service started"
+msgstr "Service de mise à jour torrent démarré"
+
+msgid "Torrent update service stopped"
+msgstr "Service de mise à jour torrent arrêté"
+
+msgid "START UPDATE FROM TORRENT FILE"
+msgstr "LANCER LA MISE À JOUR DEPUIS LE TORRENT"
+
+msgid "REALLY UPDATE FROM TORRENT FILE ?"
+msgstr "VOULEZ-VOUS VRAIMENT METTRE À JOUR DEPUIS LE TORRENT ?"
+
+msgid "DOWNLOAD STATUS"
+msgstr "STATUT DE TÉLÉCHARGEMENT"
 
 msgid "LANGUAGE"
 msgstr "LANGUE"
@@ -3937,7 +3958,7 @@ msgid "Adding drive to ignore list..."
 msgstr "Ajout du disque à la liste d'exclusion..."
 
 msgid "YES, MERGE DRIVE"
-msgstr ""
+msgstr "OUI, FUSIONNER LE DISQUE"
 
 msgid "NEW DRIVE DETECTED"
 msgstr "NOUVEAU DISQUE DÉTECTÉ"

@@ -2260,6 +2260,27 @@ msgstr "로컬 미디어 업데이트 시작"
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
 msgstr "정말 로컬 미디어에서 업데이트인가요?"
 
+msgid "SOFTWARE UPDATES VIA TORRENT"
+msgstr ""
+
+msgid "SHARE UPDATES VIA TORRENT"
+msgstr ""
+
+msgid "Torrent update service started"
+msgstr ""
+
+msgid "Torrent update service stopped"
+msgstr ""
+
+msgid "START UPDATE FROM TORRENT FILE"
+msgstr ""
+
+msgid "REALLY UPDATE FROM TORRENT FILE ?"
+msgstr ""
+
+msgid "DOWNLOAD STATUS"
+msgstr ""
+
 msgid "LANGUAGE"
 msgstr "언어"
 

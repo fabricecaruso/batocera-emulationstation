@@ -2273,6 +2273,27 @@ msgstr "ЗАПУСТИТЬ ОБНОВЛЕНИЕ ЛОКАЛЬНЫХ МЕДИА"
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
 msgstr "ОБНОВИТЬ ЛОКАЛЬНЫЕ МЕДИА?"
 
+msgid "SOFTWARE UPDATES VIA TORRENT"
+msgstr ""
+
+msgid "SHARE UPDATES VIA TORRENT"
+msgstr ""
+
+msgid "Torrent update service started"
+msgstr ""
+
+msgid "Torrent update service stopped"
+msgstr ""
+
+msgid "START UPDATE FROM TORRENT FILE"
+msgstr ""
+
+msgid "REALLY UPDATE FROM TORRENT FILE ?"
+msgstr ""
+
+msgid "DOWNLOAD STATUS"
+msgstr ""
+
 msgid "LANGUAGE"
 msgstr "ЯЗЫК"
 
