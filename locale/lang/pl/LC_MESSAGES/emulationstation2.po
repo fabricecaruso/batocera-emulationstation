@@ -2280,25 +2280,25 @@ msgid "REALLY UPDATE FROM LOCAL MEDIA?"
 msgstr "NAPRAWDĘ AKTUALIZOWAĆ Z MEDIÓW LOKALNYCH?"
 
 msgid "SOFTWARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "AKTUALIZACJE OPROGRAMOWANIA PRZEZ TORRENT"
 
 msgid "SHARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "UDOSTĘPNIAJ AKTUALIZACJE PRZEZ TORRENT"
 
 msgid "Torrent update service started"
-msgstr ""
+msgstr "Uruchomiono usługę aktualizacji torrentów"
 
 msgid "Torrent update service stopped"
-msgstr ""
+msgstr "Usługa aktualizacji torrentów zatrzymana"
 
 msgid "START UPDATE FROM TORRENT FILE"
-msgstr ""
+msgstr "ROZPOCZNIJ AKTUALIZACJĘ Z PLIKU TORRENT"
 
 msgid "REALLY UPDATE FROM TORRENT FILE ?"
-msgstr ""
+msgstr "NAPRAWDĘ AKTUALIZOWAĆ Z PLIKU TORRENT?"
 
 msgid "DOWNLOAD STATUS"
-msgstr ""
+msgstr "STAN POBIERANIA"
 
 msgid "LANGUAGE"
 msgstr "JĘZYK"
@@ -2463,19 +2463,19 @@ msgid "ENABLE LED"
 msgstr "WŁĄCZ LED"
 
 msgid "LED MODE"
-msgstr ""
+msgstr "TRYB LED"
 
 msgid "STATIC"
-msgstr ""
+msgstr "STATYCZNE"
 
 msgid "RAINBOW"
-msgstr ""
+msgstr "TĘCZA"
 
 msgid "CHROMA"
-msgstr ""
+msgstr "CHROMA"
 
 msgid "PULSE"
-msgstr ""
+msgstr "PULS"
 
 msgid "LED BRIGHTNESS"
 msgstr "JASNOŚĆ DIODY"
@@ -2508,12 +2508,15 @@ msgid "ROOT PASSWORD"
 msgstr "HASŁO ADMINISTRATORA"
 
 msgid "CPU SECURITY MITIGATIONS"
-msgstr ""
+msgstr "ZABEZPIECZENIA BEZPIECZEŃSTWA PROCESORA"
 
 msgid ""
 "Disabling mitigations may improve performance on some systems at the cost of "
 "reduced protection against certain CPU vulnerabilities."
 msgstr ""
+"Wyłączenie zabezpieczeń może poprawić wydajność niektórych systemów, ale "
+"kosztem zmniejszenia ochrony przed pewnymi lukami w zabezpieczeniach "
+"procesora."
 
 msgid "LATENCY REDUCTION"
 msgstr "REDUKCJA OPÓŹNIEŃ"
@@ -3593,7 +3596,7 @@ msgid "UKNOWN ERROR"
 msgstr "NIEZNANY BŁĄD"
 
 msgid "Checking for latest upgrade script..."
-msgstr ""
+msgstr "Sprawdzanie najnowszego skryptu aktualizacji..."
 
 msgid "Collections"
 msgstr "Kolekcje"
