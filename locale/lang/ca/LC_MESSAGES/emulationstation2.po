@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: emulationstation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-15 23:48+0100\n"
-"PO-Revision-Date: 2026-06-24 19:48+0200\n"
+"PO-Revision-Date: 2026-07-14 19:57+0200\n"
 "Last-Translator: pedrobarbosa\n"
 "Language-Team: \n"
 "Language: ca\n"
@@ -165,13 +165,13 @@ msgstr[0] "%i JOC"
 msgstr[1] "%i JOCS"
 
 msgid "SELECT"
-msgstr "SELECCIONA"
+msgstr "SELECCIONAR"
 
 msgid "NETPLAY"
 msgstr "NETPLAY"
 
 msgid "SEARCH"
-msgstr "CERCA"
+msgstr "CERCAR"
 
 msgid "RANDOM"
 msgstr "ALEATORI"
@@ -210,7 +210,7 @@ msgid "SYSTEM"
 msgstr "SISTEMA"
 
 msgid "CHOOSE"
-msgstr "TRIA"
+msgstr "TRIAR"
 
 msgid "BACK"
 msgstr "ENRERE"
@@ -854,7 +854,7 @@ msgid "VIEW FULLSCREEN VIDEO"
 msgstr "VEURE VÍDEO A PANTALLA COMPLETA"
 
 msgid "VIEW GAME MEDIA"
-msgstr "VEURE CONTINGUTS DEL JOC"
+msgstr "VEURE ARXIUS MULTIMÈDIA DEL JOC"
 
 msgid "CURRENT CORE IS NOT COMPATIBLE"
 msgstr "EL NUCLI ACTUAL NO ÉS COMPATIBLE"
@@ -1499,7 +1499,7 @@ msgid "LAST YEAR"
 msgstr "DARRER ANY"
 
 msgid "SCRAPE NOW"
-msgstr "INICIAR L’OBTENCIÓ DE DADES"
+msgstr "INICIAR L’OBTENCIÓ D’INFORMACIÓ"
 
 msgid "IMAGE SOURCE"
 msgstr "ORIGEN DE LA IMATGE"
@@ -1547,10 +1547,10 @@ msgid "OVERWRITE DESCRIPTIONS"
 msgstr "SOBREESCRIURE DESCRIPCIONS"
 
 msgid "OVERWRITE MEDIAS"
-msgstr "SOBREESCRIURE ELS MITJANS"
+msgstr "SOBREESCRIURE ARXIUS MULTIMÈDIA"
 
 msgid "SCRAPE FOR"
-msgstr "OBTENIR MULTIMÈDIA DE"
+msgstr "OBTENIR CONTINGUTS DE"
 
 msgid "SHORT NAME"
 msgstr "NOM CURT"
@@ -1891,7 +1891,7 @@ msgid "MAIN MENU"
 msgstr "MENÚ PRINCIPAL"
 
 msgid "KODI MEDIA CENTER"
-msgstr "CENTRE MULTIMÈDIA DEL KODI"
+msgstr "CENTRE MULTIMÈDIA KODI"
 
 msgid "GAME SETTINGS"
 msgstr "AJUSTOS DE JOC"
@@ -1903,7 +1903,7 @@ msgid "SOUND SETTINGS"
 msgstr "PARÀMETRES DEL SO"
 
 msgid "NETWORK SETTINGS"
-msgstr "PARÀMETRES DE LA XARXA"
+msgstr "PARÀMETRES DE XARXA"
 
 msgid "CONFIGURE INPUT"
 msgstr "CONFIGUREU L'ENTRADA"
@@ -2281,25 +2281,25 @@ msgid "REALLY UPDATE FROM LOCAL MEDIA?"
 msgstr "SEGUR QUE VOLS ACTUALITZAR DES DE DISPOSITIU LOCAL?"
 
 msgid "SOFTWARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "ACTUALITZACIONS VIA TORRENT"
 
 msgid "SHARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "COMPARTIR ACTUALITZACIONS VIA TORRENT"
 
 msgid "Torrent update service started"
-msgstr ""
+msgstr "S’ha iniciat el servei d’actualització Torrent"
 
 msgid "Torrent update service stopped"
-msgstr ""
+msgstr "S’ha aturat el servei d’actualització Torrent"
 
 msgid "START UPDATE FROM TORRENT FILE"
-msgstr ""
+msgstr "INICIAR ACTUALITZACIÓ DES D’ARXIU TORRENT"
 
 msgid "REALLY UPDATE FROM TORRENT FILE ?"
-msgstr ""
+msgstr "REALMENT VOLS ACTUALITZAR D’ARXIU TORRENT?"
 
 msgid "DOWNLOAD STATUS"
-msgstr ""
+msgstr "ESTAT DE LA DESCÀRREGA"
 
 msgid "LANGUAGE"
 msgstr "IDIOMA"
@@ -2464,19 +2464,19 @@ msgid "ENABLE LED"
 msgstr "HABILITAR LED"
 
 msgid "LED MODE"
-msgstr ""
+msgstr "MODE LED"
 
 msgid "STATIC"
-msgstr ""
+msgstr "ESTÀTIC"
 
 msgid "RAINBOW"
-msgstr ""
+msgstr "ARC DE SANT MARTÍ"
 
 msgid "CHROMA"
-msgstr ""
+msgstr "CHROMA"
 
 msgid "PULSE"
-msgstr ""
+msgstr "PULSE"
 
 msgid "LED BRIGHTNESS"
 msgstr "BRILLANTOR DEL LED"
@@ -2510,12 +2510,14 @@ msgid "ROOT PASSWORD"
 msgstr "CONTRASENYA DE ROOT"
 
 msgid "CPU SECURITY MITIGATIONS"
-msgstr ""
+msgstr "MITIGACIONS DE SEGURETAT DE LA CPU"
 
 msgid ""
 "Disabling mitigations may improve performance on some systems at the cost of "
 "reduced protection against certain CPU vulnerabilities."
 msgstr ""
+"Desactivar les mitigacions pot millorar el rendiment en alguns sistemes a "
+"costa de reduïr la protecció contra vulnerabilitats de CPU."
 
 msgid "LATENCY REDUCTION"
 msgstr "REDUCCIÓ DE LATÈNCIA"
@@ -3599,7 +3601,7 @@ msgid "UKNOWN ERROR"
 msgstr "ERROR DESCONEGUT"
 
 msgid "Checking for latest upgrade script..."
-msgstr ""
+msgstr "Comprovant l’últim script d’actualització…"
 
 msgid "Collections"
 msgstr "Coleccions"
