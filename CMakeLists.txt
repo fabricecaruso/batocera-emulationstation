@@ -381,11 +381,16 @@ set(COMMON_LIBRARIES
     ${CURL_LIBRARIES}
     ${VLC_LIBRARIES}
     pugixml
-    nanosvg
-    id3v2lib
+    nanosvg    
 	libcheevos	
 )
 
+if(NOT WIN32)
+ LIST(APPEND COMMON_LIBRARIES
+    id3v2lib
+      )
+endif()      
+	  
 if(UDEV_FOUND)
  LIST(APPEND COMMON_LIBRARIES
     ${UDEV_LIBRARY}
