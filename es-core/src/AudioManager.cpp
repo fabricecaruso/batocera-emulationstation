@@ -9,7 +9,6 @@
 #include "utils/StringUtil.h"
 #include "utils/Randomizer.h"
 #include "SystemConf.h"
-#include "id3v2lib/include/id3v2lib.h"
 #include "ThemeData.h"
 #include "Paths.h"
 
@@ -23,6 +22,7 @@
 #include <time.h>
 #else
 #include <unistd.h>
+#include "id3v2lib/include/id3v2lib.h"
 #endif
 
 // batocera
@@ -340,6 +340,7 @@ static std::string utf16_to_utf8(const std::u16string& u16)
     return out;
 }
 
+#if !WIN32
 std::string decode_text_frame(const ID3v2_TextFrameData* data)
 {
     if (!data || !data->text || data->size <= 0)
@@ -400,6 +401,7 @@ std::string decode_text_frame(const ID3v2_TextFrameData* data)
 
     return utf16_to_utf8(u16);
 }
+#endif
 
 static void remove_last_utf8_codepoint(std::string& s)
 {
@@ -586,6 +588,7 @@ void AudioManager::playSong(const std::string& song)
 
 	LOG(LogDebug) << "AudioManager::setSongName";
 
+#if !WIN32
 	// First let's try with an ID3 v2 tag
 	ID3v2_Tag* tag = ID3v2_read_tag(song.c_str());
 	if (tag != NULL)
@@ -622,6 +625,7 @@ void AudioManager::playSong(const std::string& song)
     }
 		free(tag);
 	}
+#endif
 
 	// Then, if no v2, let's try with an ID3 v1 tag	
 	struct {
