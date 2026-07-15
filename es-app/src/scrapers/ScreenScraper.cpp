@@ -45,7 +45,7 @@ const std::map<PlatformId, unsigned short> screenscraper_platformid_map{
 	{ ATARI_JAGUAR_CD, 171 },
 	{ ATARI_LYNX, 28 },
 	{ ATARI_ST, 42},
-	// missing Atari XE ?
+	{ ATARI_XE, 43},
 	{ BBC_MICRO, 37 },
 	{ COLECOVISION, 48 },
 	{ COMMODORE_64, 66 },
