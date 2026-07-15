@@ -2266,25 +2266,25 @@ msgid "REALLY UPDATE FROM LOCAL MEDIA?"
 msgstr "SUNGGUH INGIN PEMBAHARUAN LOCAL MEDIA"
 
 msgid "SOFTWARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "PEMBARUAN PERANGKAT LUNAK VIA TORRENT"
 
 msgid "SHARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "BAGIKAN PEMBARUAN VIA TORRENT"
 
 msgid "Torrent update service started"
-msgstr ""
+msgstr "Layanan pembaruan Torrent telah dimulai"
 
 msgid "Torrent update service stopped"
-msgstr ""
+msgstr "Layanan pembaruan Torrent telah dihentikan"
 
 msgid "START UPDATE FROM TORRENT FILE"
-msgstr ""
+msgstr "MULAI PEMBARUAN DARI FILE TORRENT"
 
 msgid "REALLY UPDATE FROM TORRENT FILE ?"
-msgstr ""
+msgstr "YAKIN INGIN MEMPERBARUI DARI FILE TORRENT?"
 
 msgid "DOWNLOAD STATUS"
-msgstr ""
+msgstr "STATUS PENGUNDUHAN"
 
 msgid "LANGUAGE"
 msgstr "BAHASA"
@@ -2446,19 +2446,19 @@ msgid "ENABLE LED"
 msgstr "AKTIFKAN LED"
 
 msgid "LED MODE"
-msgstr ""
+msgstr "MODE LED"
 
 msgid "STATIC"
-msgstr ""
+msgstr "STATIS"
 
 msgid "RAINBOW"
-msgstr ""
+msgstr "PELANGI"
 
 msgid "CHROMA"
-msgstr ""
+msgstr "CHROMA"
 
 msgid "PULSE"
-msgstr ""
+msgstr "DENYUT (PULSE)"
 
 msgid "LED BRIGHTNESS"
 msgstr "KECERAHAN LED"
@@ -2491,12 +2491,14 @@ msgid "ROOT PASSWORD"
 msgstr "SANDI ROOT"
 
 msgid "CPU SECURITY MITIGATIONS"
-msgstr ""
+msgstr "MITIGASI KEAMANAN CPU"
 
 msgid ""
 "Disabling mitigations may improve performance on some systems at the cost of "
 "reduced protection against certain CPU vulnerabilities."
 msgstr ""
+"Mematikan mitigasi dapat meningkatkan kinerja pada beberapa sistem,"
+"namun mengurangi perlindungan terhadap kerentanan CPU tertentu."
 
 msgid "LATENCY REDUCTION"
 msgstr "KURANGI LATENSI"
@@ -3573,7 +3575,7 @@ msgid "UKNOWN ERROR"
 msgstr "ERROR TAK DIKETAHUI"
 
 msgid "Checking for latest upgrade script..."
-msgstr ""
+msgstr "Memeriksa skrip peningkatan terbaru..."
 
 msgid "Collections"
 msgstr "Koleksi"
