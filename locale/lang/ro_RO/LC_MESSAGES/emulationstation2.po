@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-06-23 19:16+0300\n"
+"PO-Revision-Date: 2026-07-16 22:56+0300\n"
 "Last-Translator: Mihai Vasiliu <mihai.vasiliu.93@gmail.com>\n"
 "Language-Team: \n"
 "Language: ro_RO\n"
@@ -597,7 +597,7 @@ msgid "START"
 msgstr "ÎNCEPE"
 
 msgid "REALLY UPDATE?"
-msgstr "SIGUR ACTUALIZEZI?"
+msgstr "DOREȘTI SĂ ACTUALIZEZI?"
 
 #, c-format
 msgid ""
@@ -2281,31 +2281,31 @@ msgid "UPDATER IS ALREADY RUNNING"
 msgstr "ACTUALIZATORUL DEJA RULEAZĂ"
 
 msgid "START LOCAL MEDIA UPDATE"
-msgstr "ÎNCEPE ACTUALIZARE MEDIA LOCALĂ"
+msgstr "ÎNCEPE ACTUALIZAREA DIN FIȘIER LOCAL"
 
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
-msgstr "SIGUR ACTUALIZEZI DIN MEDIA LOCALĂ?"
+msgstr "DOREȘTI SĂ ACTUALIZEZI DIN FIȘIER LOCAL?"
 
 msgid "SOFTWARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "ACTUALIZĂRI SOFTWARE VIA TORRENT"
 
 msgid "SHARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "PARTAJEAZĂ ACTUALIZĂRILE VIA TORRENT"
 
 msgid "Torrent update service started"
-msgstr ""
+msgstr "Serviciu de actualizare via torrent pornit"
 
 msgid "Torrent update service stopped"
-msgstr ""
+msgstr "Serviciu de actualizare via torrent oprit"
 
 msgid "START UPDATE FROM TORRENT FILE"
-msgstr ""
+msgstr "ÎNCEPE ACTUALIZAREA DIN FIȘIER TORRENT"
 
 msgid "REALLY UPDATE FROM TORRENT FILE ?"
-msgstr ""
+msgstr "DOREȘTI SĂ ACTUALIZEZI DIN FIȘIER TORRENT?"
 
 msgid "DOWNLOAD STATUS"
-msgstr ""
+msgstr "STARE DESCĂRCARE"
 
 msgid "LANGUAGE"
 msgstr "LIMBĂ"
@@ -2471,19 +2471,19 @@ msgid "ENABLE LED"
 msgstr "ACTIVEAZĂ LED"
 
 msgid "LED MODE"
-msgstr ""
+msgstr "MOD LED"
 
 msgid "STATIC"
-msgstr ""
+msgstr "STATIC"
 
 msgid "RAINBOW"
-msgstr ""
+msgstr "CURCUBEU"
 
 msgid "CHROMA"
-msgstr ""
+msgstr "CROMATIC"
 
 msgid "PULSE"
-msgstr ""
+msgstr "PULSATORIU"
 
 msgid "LED BRIGHTNESS"
 msgstr "LUMINOZITATE LED"
@@ -2516,12 +2516,15 @@ msgid "ROOT PASSWORD"
 msgstr "PAROLĂ ROOT"
 
 msgid "CPU SECURITY MITIGATIONS"
-msgstr ""
+msgstr "SLĂBIRE SECURITATE CPU"
 
 msgid ""
 "Disabling mitigations may improve performance on some systems at the cost of "
 "reduced protection against certain CPU vulnerabilities."
 msgstr ""
+"Slăbind securitatea procesorului poate îmbunătăți performanța pe unele "
+"sisteme cu costul protecției mai reduse împotriva unor vulnerabilități ale "
+"procesorului."
 
 msgid "LATENCY REDUCTION"
 msgstr "REDUCEREA LATENȚEI"
@@ -2716,7 +2719,7 @@ msgid "GAME HASHING IS RUNNING. DO YOU WANT TO STOP IT?"
 msgstr "SE CALCULEAZĂ HASH-URILE JOCURILOR. DOREȘTI SĂ OPREȘTI PROCESUL?"
 
 msgid "REALLY UPDATE GAMELISTS?"
-msgstr "CHIAR DOREȘTI ACTUALIZAREA LISTELOR DE JOCURI?"
+msgstr "DOREȘTI ACTUALIZAREA LISTELOR DE JOCURI?"
 
 msgid "Emulator"
 msgstr "Emulator"
@@ -2974,19 +2977,19 @@ msgid "RESTART SYSTEM"
 msgstr "REPORNEȘTE SISTEMUL"
 
 msgid "REALLY RESTART?"
-msgstr "CHIAR REPORNEȘTI?"
+msgstr "DOREȘTI REPORNIREA?"
 
 msgid "SUSPEND SYSTEM"
 msgstr "SUSPENDĂ SISTEMUL"
 
 msgid "REALLY SUSPEND ?"
-msgstr "CHIAR SUSPENZI?"
+msgstr "DOREȘTI SUSPENDAREA?"
 
 msgid "SHUTDOWN SYSTEM"
 msgstr "ÎNCHIDE SISTEMUL"
 
 msgid "REALLY SHUTDOWN?"
-msgstr "CHIAR ÎNCHIZI?"
+msgstr "DOREȘTI ÎNCHIDEREA?"
 
 msgid "FAST SHUTDOWN SYSTEM"
 msgstr "ÎNCHIDE SISTEMUL RAPID"
@@ -2995,13 +2998,13 @@ msgid "Shutdown without saving metadata."
 msgstr "Închide fără să salvezi metadatele."
 
 msgid "REALLY SHUTDOWN WITHOUT SAVING METADATA?"
-msgstr "CHIAR ÎNCHIZI FĂRĂ SĂ SALVEZI METADATELE?"
+msgstr "DOREȘTI SĂ ÎNCHIZI FĂRĂ SĂ SALVEZI METADATELE?"
 
 msgid "QUIT EMULATIONSTATION"
 msgstr "ÎNCHIDE EMULATIONSTATION"
 
 msgid "REALLY QUIT?"
-msgstr "CHIAR ÎNCHIZI?"
+msgstr "DOREȘTI SĂ ÎNCHIZI?"
 
 msgid "AUTO SAVE/LOAD ON GAME LAUNCH"
 msgstr "SALVEAZĂ/ÎNCARCĂ AUTOMAT LA LANSARE"
@@ -3603,7 +3606,7 @@ msgid "UKNOWN ERROR"
 msgstr "EROARE NECUNOSCUTĂ"
 
 msgid "Checking for latest upgrade script..."
-msgstr ""
+msgstr "Se verifică pentru cel mai recent script de actualizare..."
 
 msgid "Collections"
 msgstr "Colecții"
