@@ -6,8 +6,5 @@ if (NOT USE_SYSTEM_PUGIXML)
   add_subdirectory("pugixml")
 endif()
 
-if(NOT WIN32)
-	add_subdirectory("id3v2lib")
-endif()
-
+add_subdirectory("id3v2lib")
 add_subdirectory("libcheevos")
