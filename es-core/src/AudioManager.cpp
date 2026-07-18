@@ -11,6 +11,7 @@
 #include "SystemConf.h"
 #include "ThemeData.h"
 #include "Paths.h"
+#include "id3v2lib/include/id3v2lib.h"
 
 #include <fstream>
 #include <sstream>
@@ -22,7 +23,6 @@
 #include <time.h>
 #else
 #include <unistd.h>
-#include "id3v2lib/include/id3v2lib.h"
 #endif
 
 // batocera
@@ -340,8 +340,7 @@ static std::string utf16_to_utf8(const std::u16string& u16)
     return out;
 }
 
-#if !WIN32
-std::string decode_text_frame(const ID3v2_TextFrameData* data)
+static std::string decode_text_frame(const ID3v2_TextFrameData* data)
 {
     if (!data || !data->text || data->size <= 0)
         return {};
@@ -399,23 +398,7 @@ std::string decode_text_frame(const ID3v2_TextFrameData* data)
         u16.push_back(ch);
     }
 
-    return utf16_to_utf8(u16);
-}
-#endif
-
-static void remove_last_utf8_codepoint(std::string& s)
-{
-    if (s.empty())
-        return;
-
-    // Move back to the start byte of the last UTF‑8 codepoint
-    size_t i = s.size() - 1;
-
-    // Skip continuation bytes (10xxxxxx)
-    while (i > 0 && (static_cast<unsigned char>(s[i]) & 0xC0) == 0x80)
-        --i;
-
-    s.erase(i);
+	return utf16_to_utf8(u16);
 }
 
 void AudioManager::playMusic(const std::string& path)
@@ -588,44 +571,30 @@ void AudioManager::playSong(const std::string& song)
 
 	LOG(LogDebug) << "AudioManager::setSongName";
 
-#if !WIN32
 	// First let's try with an ID3 v2 tag
 	ID3v2_Tag* tag = ID3v2_read_tag(song.c_str());
-	if (tag != NULL)
-  {
-    ID3v2_TextFrame* title_frame = ID3v2_Tag_get_title_frame(tag);
-    if (title_frame != NULL)
-    {
-      ID3v2_TextFrameData* textdata =
-        (ID3v2_TextFrameData*) title_frame->data;
+	if (tag != nullptr)
+	{
+		ID3v2_TextFrame* title_frame = ID3v2_Tag_get_title_frame(tag);
+		if (title_frame != nullptr)
+		{
+			std::string song_name = decode_text_frame(title_frame->data);
 
-      std::string title_utf8 = decode_text_frame(textdata);
-      remove_last_utf8_codepoint(title_utf8);
-      std::string song_name = title_utf8;
+			ID3v2_TextFrame* artist_frame = ID3v2_Tag_get_artist_frame(tag);
+			if (artist_frame != nullptr)
+			{
+				song_name += " - " + decode_text_frame(artist_frame->data);
+				free(artist_frame);
+			}
 
-      ID3v2_TextFrame* artist_frame = ID3v2_Tag_get_artist_frame(tag);
-      if (artist_frame != NULL)
-      {
-        ID3v2_TextFrameData* artistdata =
-          (ID3v2_TextFrameData*) artist_frame->data;
+			setSongName(Utils::String::trim(song_name));
 
-        std::string artist_utf8 = decode_text_frame(artistdata);
-        remove_last_utf8_codepoint(artist_utf8);
-        song_name += " - ";
-        song_name += artist_utf8;
-      }
-
-      song_name = Utils::String::trim(song_name);
-      setSongName(song_name);
-
-      free(artist_frame);
-      free(title_frame);
-      free(tag);
-      return;
-    }
+			free(title_frame);
+			free(tag);
+			return;
+		}
 		free(tag);
 	}
-#endif
 
 	// Then, if no v2, let's try with an ID3 v1 tag	
 	struct {
