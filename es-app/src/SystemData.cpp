@@ -197,20 +197,27 @@ void SystemData::removeMultiDiskContent(std::unordered_map<std::string, FileData
 		{
 			if (it->getType() == GAME && it->hasContentFiles())
 			{
+				std::string stamp = "mtime:" + std::to_string(
+					(long long)Utils::FileSystem::getFileModificationDate(it->getPath()).getTime());
+
+				bool fromCache = false;
+
 				std::string json = loadFromJson ? it->getMetadata().get("multidisk") : "";
 				if (!json.empty())
 				{
 					rapidjson::Document doc;
 					doc.Parse(json.c_str());
 
-					if (doc.IsArray())
+					if (doc.IsArray() && doc.Size() > 0 && doc[0].IsString() && stamp == doc[0].GetString())
 					{
+						fromCache = true;
+
 						for (auto& v : doc.GetArray())
 						{
 							if (v.IsString())
 							{
 								std::string file = v.GetString();
-								if (Utils::String::endsWith(file, "/"))
+								if (Utils::String::startsWith(file, "mtime:") || Utils::String::endsWith(file, "/"))
 									continue;
 
 								file = Utils::FileSystem::getAbsolutePath(file, relativeTo);
@@ -219,12 +226,13 @@ void SystemData::removeMultiDiskContent(std::unordered_map<std::string, FileData
 						}
 					}
 				}
-				else
+				if (!fromCache)
 				{
 					rapidjson::Document doc;
 					doc.SetArray();
 
 					auto& allocator = doc.GetAllocator();
+					doc.PushBack(rapidjson::Value(stamp.c_str(), allocator), allocator);
 
 					for (auto ct : it->getContentFiles())
 					{

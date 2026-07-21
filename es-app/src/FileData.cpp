@@ -905,10 +905,17 @@ std::set<std::string> FileData::getContentFiles()
 				while (std::getline(m3u, line))
 				{
 					auto trim = Utils::String::trim(line);
-					if (trim[0] == '#' || trim[0] == '\\' || trim[0] == '/' || trim[0] == '\0')
+					if (trim.empty() || trim[0] == '#')
 						continue;
 
-					files.insert(path + "/" + trim);
+					trim = Utils::String::replace(trim, "\\", "/");
+
+					if (Utils::FileSystem::isAbsolute(trim))
+						files.insert(Utils::FileSystem::getGenericPath(trim));
+					else if (trim[0] == '/')
+						continue;
+					else
+						files.insert(Utils::FileSystem::getCanonicalPath(path + "/" + trim));
 				}
 
 				m3u.close();
