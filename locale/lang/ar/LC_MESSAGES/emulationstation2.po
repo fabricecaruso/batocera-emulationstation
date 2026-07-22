@@ -403,10 +403,10 @@ msgid ""
 msgstr "عرض أيقونة في الزاوية اليمنى أسفل الشاشة.إن كانت هنالك إنجازات لكسبها"
 
 msgid "UNOFFICIAL ACHIEVEMENTS"
-msgstr ""
+msgstr "إنجازات غير رسمية"
 
 msgid "Enable unlocking of unofficial achievements."
-msgstr ""
+msgstr ".تمكين فتح الإنجازات غير الرسمية"
 
 msgid "RETROACHIEVEMENT UNLOCK SOUND"
 msgstr "صوت فتح إنجاز من إنجازات الريترو"
@@ -436,103 +436,103 @@ msgid "UNABLE TO ACTIVATE RETROACHIEVEMENTS:"
 msgstr ":تعثر تفعيل انجازات الريترو"
 
 msgid "KEYBOARDTOPADS"
-msgstr ""
+msgstr "لوحة المفاتيح إلى أذرع تحكم"
 
 msgid "HOTKEYS"
-msgstr ""
+msgstr "مفاتيح الاختصار"
 
 msgid "KEYS DEFINED BUT JOYSTICK NOT NAMED"
-msgstr ""
+msgstr "تم تعريف المفاتيح ولكن لم يتم تسمية عصا التحكم"
 
 msgid "JOYSTICK NAMED BUT NO KEYS DEFINED"
-msgstr ""
+msgstr "تم تسمية عصا التحكم ولكن لم يتم تعريف أي مفاتيح"
 
 msgid "UNPLUG AND REPLUG THE DEVICE TO APPLY"
-msgstr ""
+msgstr "افصل الجهاز وأعد توصيله لتطبيق التغييرات"
 
 msgid "go back"
 msgstr "الرجوع"
 
 msgid "JOYSTICK NAME"
-msgstr ""
+msgstr "اسم عصا التحكم"
 
 msgid "PRESS A KEY OR WAIT 4 SECONDS TO CLEAR"
-msgstr ""
+msgstr "اضغط على مفتاح أو انتظر 4 ثوانٍ للإلغاء"
 
 msgid "OVERLAYS"
-msgstr ""
+msgstr "التراكبات"
 
 msgid "BRIGHTNESS CYCLE"
-msgstr ""
+msgstr "دورة السطوع"
 
 msgid "CONTROL CENTER"
-msgstr ""
+msgstr "مركز التحكم"
 
 msgid "EXIT"
-msgstr ""
+msgstr "خروج"
 
 msgid "PAUSE"
-msgstr ""
+msgstr "إيقاف مؤقت"
 
 msgid "COIN"
-msgstr ""
+msgstr "عملة"
 
 msgid "FAST FORWARD"
-msgstr ""
+msgstr "تقديم سريع"
 
 msgid "NEXT DISK"
-msgstr ""
+msgstr "القرص التالي"
 
 msgid "NEXT SLOT"
-msgstr ""
+msgstr "الخانة التالية"
 
 msgid "PREVIOUS SLOT"
-msgstr ""
+msgstr "الخانة السابقة"
 
 msgid "RESET"
 msgstr "إعادة التشغيل"
 
 msgid "SAVE STATE"
-msgstr ""
+msgstr "حفظ الحالة"
 
 msgid "RESTORE STATE"
-msgstr ""
+msgstr "استعادة الحالة"
 
 msgid "REWIND"
 msgstr "الترجيع"
 
 msgid "SCREEN LAYOUT"
-msgstr ""
+msgstr "نظام تخطيط الشاشة"
 
 msgid "SCREENSHOT"
 msgstr "لقطة شاشة"
 
 msgid "SWAP SCREEN"
-msgstr ""
+msgstr "تبديل الشاشة"
 
 msgid "TRANSLATION"
-msgstr ""
+msgstr "الترجمة"
 
 msgid "VOLUME DOWN"
-msgstr ""
+msgstr "خفض الصوت"
 
 msgid "VOLUME UP"
-msgstr ""
+msgstr "رفع الصوت"
 
 msgid "VOLUME MUTE"
-msgstr ""
+msgstr "كتم الصوت"
 
 msgid "START RECORDING"
-msgstr ""
+msgstr "بدء التسجيل"
 
 msgid "STOP RECORDING"
-msgstr ""
+msgstr "إيقاف التسجيل"
 
 msgid "KEYBOARD TOGGLE"
-msgstr ""
+msgstr "تبديل لوحة المفاتيح"
 
 msgid "KEY ASSIGNED TWICE"
-msgstr ""
+msgstr "تم تعيين المفتاح مرتين"
 
 msgid "ZOOM OUT"
 msgstr "تصغير"
@@ -642,6 +642,8 @@ msgid ""
 "YOU ARE CURRENTLY USING VERSION %s\n"
 "DO YOU WANT TO UPDATE TO VERSION %s?"
 msgstr ""
+"أنت تستخدم حاليًا الإصدار %s\n"
+"هل تريد التحديث إلى الإصدار %s؟"
 
 #, c-format
 msgid ""
@@ -947,10 +949,10 @@ msgstr ""
 "هل أنت متأكد؟"
 
 msgid "NFC"
-msgstr ""
+msgstr "NFC"
 
 msgid "WRITE AN NFC TAG FOR THIS GAME"
-msgstr ""
+msgstr "كتابة وسم NFC لهذه اللعبة"
 
 #, c-format
 msgid ""
@@ -958,15 +960,18 @@ msgid ""
 "'%s'\n"
 "PRESS THE WRITE BUTTON AND THEN PLACE AN NFC TAG ON THE WRITER"
 msgstr ""
+"لكتابة أمر التشغيل لـ\n"
+"'%s'\n"
+"اضغط على زر الكتابة ثم ضع علامة NFC على القارئ"
 
 msgid "WRITE"
-msgstr ""
+msgstr "كتابة"
 
 msgid "PLACE A TAG ON THE WRITER..."
-msgstr ""
+msgstr "...ضع علامة على القارئ"
 
 msgid "THE TAG WAS WRITTEN SUCCESSFULLY"
-msgstr ""
+msgstr "تمت كتابة العلامة بنجاح"
 
 #, c-format
 msgid "REMOVE FROM %s"
@@ -1034,10 +1039,10 @@ msgid "BY MANUFACTURER"
 msgstr "حسب المطور"
 
 msgid "BY HARDWARE TYPE THEN ALPHABETICALLY"
-msgstr ""
+msgstr "حسب نوع الأجهزة ثم أبجديًا"
 
 msgid "BY HARDWARE TYPE THEN YEAR"
-msgstr ""
+msgstr "حسب نوع الأجهزة ثم السنة"
 
 msgid "BY MANUFACTURER AND TYPE"
 msgstr "حسب المطور والنوع"
@@ -1185,7 +1190,7 @@ msgid "SHOW CONTROLLER BATTERY LEVEL"
 msgstr "عرض نسبة بطارية وحدة التحكم"
 
 msgid "SHOW GUN NOTIFICATIONS"
-msgstr ""
+msgstr "إظهار إشعارات المسدس"
 
 msgid "DRAW GUN CROSSHAIR"
 msgstr "رسم تصويب البندقية"
@@ -1194,13 +1199,13 @@ msgid "BEHAVIOR"
 msgstr "سلوك"
 
 msgid "JOYSTICKS HOTKEYS"
-msgstr ""
+msgstr "مفاتيح اختصار عصا التحكم"
 
 msgid "RESTRICT JOYSTICKS HOTKEYS TO EXIT"
-msgstr ""
+msgstr "تقييد مفاتيح اختصار عصا التحكم للخروج فقط"
 
 msgid "GLOBAL HOTKEYS"
-msgstr ""
+msgstr "مفاتيح الاختصار العامة"
 
 msgid "default"
 msgstr "افتراضي"
@@ -1209,67 +1214,67 @@ msgid "NOT CONNECTED"
 msgstr "غير متصل"
 
 msgid "SOUTH"
-msgstr ""
+msgstr "الجنوب"
 
 msgid "EAST"
-msgstr ""
+msgstr "الشرق"
 
 msgid "NORTH"
-msgstr ""
+msgstr "الشمال"
 
 msgid "WEST"
-msgstr ""
+msgstr "الغرب"
 
 msgid "D-PAD UP"
-msgstr ""
+msgstr "سهم لأعلى"
 
 msgid "D-PAD DOWN"
-msgstr ""
+msgstr "سهم لأسفل"
 
 msgid "D-PAD LEFT"
-msgstr ""
+msgstr "سهم لليسار"
 
 msgid "D-PAD RIGHT"
-msgstr ""
+msgstr "سهم لليمين"
 
 msgid "LEFT SHOULDER"
-msgstr ""
+msgstr "الكتف الأيسر"
 
 msgid "RIGHT SHOULDER"
-msgstr ""
+msgstr "الكتف الأيمن"
 
 msgid "LEFT TRIGGER"
-msgstr ""
+msgstr "الزناد الأيسر"
 
 msgid "RIGHT TRIGGER"
-msgstr ""
+msgstr "الزناد الأيمن"
 
 msgid "LEFT STICK PRESS"
-msgstr ""
+msgstr "ضغط العصا اليسرى"
 
 msgid "RIGHT STICK PRESS"
-msgstr ""
+msgstr "ضغط العصا اليمنى"
 
 msgid "HOTKEY"
-msgstr ""
+msgstr "مفتاح اختصار"
 
 msgid "DEFAULT"
 msgstr "افتراضي"
 
 msgid "NO DEVICE FOUND (JAMMASD, IPAC, ...)"
-msgstr ""
+msgstr "لم يتم العثور على جهاز (JAMMASD، IPAC، ...)"
 
 msgid "DECLARE A NEW GLOBAL HOTKEY"
-msgstr ""
+msgstr "تعيين مفتاح اختصار عام جديد"
 
 msgid "YOU'VE 4 SECONDS TO PRESS EXACTLY 2 TIMES THE GLOBAL HOTKEY"
-msgstr ""
+msgstr "لديك 4 ثوانٍ للضغط مرتين بالضبط على مفتاح الاختصار العام"
 
 msgid "NO GLOBAL HOTKEY DETECTED"
-msgstr ""
+msgstr "لم يتم اكتشاف مفتاح اختصار عام"
 
 msgid "MORE THAN ONE GLOBAL HOTKEY DETECTED"
-msgstr ""
+msgstr "تم اكتشاف أكثر من مفتاح اختصار عام"
 
 msgid "BORDER SIZE"
 msgstr "حجم الإطار"
@@ -1428,10 +1433,10 @@ msgid "SEARCHING WI-FI NETWORKS"
 msgstr "جارِ البحث عن شبكة WIFI"
 
 msgid "PARIS"
-msgstr ""
+msgstr "باريس"
 
 msgid "OSAKA"
-msgstr ""
+msgstr "أوساكا"
 
 msgid "SEOUL"
 msgstr "سول-كوريا"
@@ -1617,10 +1622,10 @@ msgid "PADTOKEY SETTINGS"
 msgstr "إعدادات وحدة التحكم إلى لوحة المفاتيح"
 
 msgid "MANUAL SCRAPE"
-msgstr ""
+msgstr "جمع يدوي"
 
 msgid "INCLUDED SCRAPERS"
-msgstr ""
+msgstr "أدوات الجمع المضمنة"
 
 msgid "SCREENSCRAPER"
 msgstr "جالِب الشاشة"
@@ -1662,7 +1667,7 @@ msgid "SYSTEM DISK USAGE"
 msgstr "حجم تخزين النظام"
 
 msgid "DISK USAGE"
-msgstr ""
+msgstr "استخدام القرص"
 
 msgid "VIDEO DRIVER"
 msgstr "برامج تشغيل الرّسوميَّات"
@@ -1866,10 +1871,10 @@ msgid "Network IP Address"
 msgstr "(IP) عنوان الشبكة"
 
 msgid "UEFI Boot"
-msgstr ""
+msgstr "إقلاع UEFI"
 
 msgid "Secure Boot"
-msgstr ""
+msgstr "الإقلاع الآمن"
 
 msgctxt "game_options"
 msgid "SHARP-BILINEAR-SIMPLE"
@@ -2060,7 +2065,7 @@ msgid "VSYNC"
 msgstr "Vsync التزامن العمودي"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "حد الإطارات في الثانية"
 
 msgid "OVERSCAN"
 msgstr "المسح الزائد"
@@ -2269,7 +2274,7 @@ msgid "OPTIMIZE VIDEO VRAM USAGE"
 msgstr "تحسين الفيديو باستخدام ذاكرة الفيديو"
 
 msgid "USE FILESYSTEM CACHE"
-msgstr ""
+msgstr "استخدام ذاكرة التخزين المؤقت لنظام الملفات"
 
 msgid "REBOOT REQUIRED TO APPLY THE NEW CONFIGURATION"
 msgstr "يرجى إعادة تشغيل النظام لتطبيق الإعدادات الجديدة"
@@ -2299,31 +2304,31 @@ msgid "UPDATER IS ALREADY RUNNING"
 msgstr "التحديث شغال مسبقا"
 
 msgid "START LOCAL MEDIA UPDATE"
-msgstr ""
+msgstr "بدء التحديث من الوسائط المحلية"
 
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
-msgstr ""
+msgstr "هل تريد التحديث من الوسائط المحلية حقًا؟"
 
 msgid "SOFTWARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "تحديثات البرامج عبر التورنت"
 
 msgid "SHARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "مشاركة التحديثات عبر التورنت"
 
 msgid "Torrent update service started"
-msgstr ""
+msgstr "تم بدء خدمة تحديث التورنت"
 
 msgid "Torrent update service stopped"
-msgstr ""
+msgstr "تم إيقاف خدمة تحديث التورنت"
 
 msgid "START UPDATE FROM TORRENT FILE"
-msgstr ""
+msgstr "بدء التحديث من ملف تورنت"
 
 msgid "REALLY UPDATE FROM TORRENT FILE ?"
-msgstr ""
+msgstr "هل تريد التحديث من ملف تورنت حقًا؟"
 
 msgid "DOWNLOAD STATUS"
-msgstr ""
+msgstr "حالة التحميل"
 
 msgid "LANGUAGE"
 msgstr "اللغة"
@@ -2332,15 +2337,16 @@ msgid "LANGUAGE (REGION)"
 msgstr "اللغة (المنطقة)"
 
 msgid "KEYBOARD LAYOUT"
-msgstr ""
+msgstr "تخطيط لوحة المفاتيح"
 
 msgid "KEYBOARD VARIANT"
-msgstr ""
+msgstr "تنويع لوحة المفاتيح"
 
 msgid ""
 "Select the physical keyboard layout. A reboot may be required for changes to "
 "take full effect."
 msgstr ""
+"حدد تخطيط لوحة المفاتيح الفعلية. قد يلزم إعادة التشغيل لتطبيق التغييرات بالكامل."
 
 msgid "SELECT YOUR TIME ZONE"
 msgstr "قم باختيار منطقتك الزمنية"
@@ -2479,22 +2485,22 @@ msgid "LED HARDWARE"
 msgstr "أجهزة LED"
 
 msgid "ENABLE LED"
-msgstr ""
+msgstr "تمكين LED"
 
 msgid "LED MODE"
-msgstr ""
+msgstr "وضع LED"
 
 msgid "STATIC"
-msgstr ""
+msgstr "ثابت"
 
 msgid "RAINBOW"
-msgstr ""
+msgstr "قوس قزح"
 
 msgid "CHROMA"
-msgstr ""
+msgstr "كروم"
 
 msgid "PULSE"
-msgstr ""
+msgstr "نبض"
 
 msgid "LED BRIGHTNESS"
 msgstr "سطوع LED"
@@ -2506,10 +2512,10 @@ msgid "STORAGE DEVICE"
 msgstr "جهاز التخزين"
 
 msgid "EJECT AN EXTRA DISK"
-msgstr ""
+msgstr "إخراج قرص إضافي"
 
 msgid "EXTRA DRIVE FILESYSTEM TYPE"
-msgstr ""
+msgstr "نظام ملفات المحرك الإضافي"
 
 msgid "ADVANCED"
 msgstr "متقدم"
@@ -2527,12 +2533,13 @@ msgid "ROOT PASSWORD"
 msgstr "كلمة مرور الجذر"
 
 msgid "CPU SECURITY MITIGATIONS"
-msgstr ""
+msgstr "تخفيفات أمن المعالج"
 
 msgid ""
 "Disabling mitigations may improve performance on some systems at the cost of "
 "reduced protection against certain CPU vulnerabilities."
 msgstr ""
+"قد يؤدي تعطيل التخفيفات إلى تحسين الأداء على بعض الأنظمة على حساب تقليل الحماية ضد بعض ثغرات المعالج."
 
 msgid "LATENCY REDUCTION"
 msgstr "خفض الاستجابة"
@@ -2775,7 +2782,7 @@ msgid "SHOW '..' PARENT FOLDER"
 msgstr "عرض '..' لمجلد الوالدين"
 
 msgid "ICONS"
-msgstr ""
+msgstr "الأيقونات"
 
 msgid "AFTER NAME"
 msgstr "بعد الاسم"
@@ -2784,7 +2791,7 @@ msgid "BEFORE NAME"
 msgstr "قبل الاسم"
 
 msgid "SHOW TAGS ICONS"
-msgstr ""
+msgstr "إظهار أيقونات اللأوسمة"
 
 msgid "SHOW REGION FLAG"
 msgstr "عرض عَلَم المنطقة"
@@ -2937,10 +2944,10 @@ msgid "WIFI KEY"
 msgstr "كلمة سر الوايفاي"
 
 msgid "WIFI COUNTRY"
-msgstr ""
+msgstr "دولة الواي فاي"
 
 msgid "N/A"
-msgstr ""
+msgstr "غير متاح"
 
 msgid "WIFI ENABLED"
 msgstr "تم تفعيل الوايفاي"
@@ -3066,28 +3073,28 @@ msgid "ARE YOU SURE YOU WANT TO FORMAT THIS DRIVE?"
 msgstr "هل أنت متأكد أنك تريد تهيئة هذا القرص؟"
 
 msgid "SAFELY EJECT A DISK"
-msgstr ""
+msgstr "إخراج قرص بأمان"
 
 msgid "MERGED DRIVE"
-msgstr ""
+msgstr "محرك مدمج"
 
 msgid "NO MERGED DRIVES FOUND"
-msgstr ""
+msgstr "لم يتم العثور على محركات مدمجة"
 
 msgid "EJECT"
-msgstr ""
+msgstr "إخراج"
 
 msgid "NO DRIVE SELECTED"
-msgstr ""
+msgstr "لم يتم تحديد محرك"
 
 msgid "Ejecting..."
-msgstr ""
+msgstr "... إخراج"
 
 msgid "EDIT METADATA"
 msgstr "تعديل بيانات التعريف"
 
 msgid "TAGS"
-msgstr ""
+msgstr "الأوسمة"
 
 msgid "GENRES"
 msgstr "الأنواع"
@@ -3271,16 +3278,16 @@ msgid "enter game genre"
 msgstr "أدخل نوع اللعبة"
 
 msgid "Tags"
-msgstr ""
+msgstr "أوسمة"
 
 msgid "tags"
-msgstr ""
+msgstr "أوسمة"
 
 msgid "Sort name"
-msgstr ""
+msgstr "اسم الترتيب"
 
 msgid "enter game sort name"
-msgstr ""
+msgstr "أدخل اسم ترتيب اللعبةأدخل اسم ترتيب اللعبة"
 
 msgid "emulator"
 msgstr "المحاكي"
@@ -3478,7 +3485,7 @@ msgid "Screenscraper Game ID"
 msgstr "معرف اللعبة لجالب الشاشة"
 
 msgid "MultiDisk"
-msgstr ""
+msgstr "أقراص متعددة"
 
 msgid "Loading system config..."
 msgstr "...جار تحميل إعدادات النظام"
@@ -3569,19 +3576,19 @@ msgstr ""
 "مطلوب حساب فعال، من فضلك قم بتسجيل حساب علىhttps://retroachievements.org"
 
 msgid "SLOW"
-msgstr ""
+msgstr "بطيء"
 
 msgid "NOT WORKING"
-msgstr ""
+msgstr "لا يعمل"
 
 msgid "BUGGY"
-msgstr ""
+msgstr "مليء بالأخطاء"
 
 msgid "LIKED"
-msgstr ""
+msgstr "محبوب"
 
 msgid "DISLIKED"
-msgstr ""
+msgstr "غير محبوب"
 
 msgid "UPDATE AVAILABLE"
 msgstr "يوجد تحديث متوفر"
@@ -3608,7 +3615,7 @@ msgid "UKNOWN ERROR"
 msgstr "خطأ مجهول"
 
 msgid "Checking for latest upgrade script..."
-msgstr ""
+msgstr "...جاري التحقق من أحدث نص برمجي للتحديث"
 
 msgid "Collections"
 msgstr "المجموعات"
@@ -3632,7 +3639,7 @@ msgid "GENRE"
 msgstr "النوع"
 
 msgid "TAG"
-msgstr ""
+msgstr "وسم"
 
 msgid "FAMILY"
 msgstr "العائلة"
@@ -3944,70 +3951,70 @@ msgstr ""
 "أطلق النار على الأهداف للمعايرة"
 
 msgid "Reloaded the games list..."
-msgstr ""
+msgstr "... تم إعادة تحميل قائمة الألعاب"
 
 msgid "GAME DRIVE DETECTED"
-msgstr ""
+msgstr "تم اكتشاف محرك اللعبة"
 
 msgid "DEVICE"
-msgstr ""
+msgstr "الجهاز"
 
 msgid "MODEL"
-msgstr ""
+msgstr "الطراز"
 
 msgid "SIZE"
-msgstr ""
+msgstr "الحجم"
 
 msgid "MOUNT"
-msgstr ""
+msgstr "تركيب"
 
 msgid "Merge games from this drive partition now?"
-msgstr ""
+msgstr "هل تريد دمج الألعاب من قسم هذا المحرك الآن؟"
 
 msgid "(This will also apply on future boots)"
-msgstr ""
+msgstr "(سيتم تطبيق هذا أيضًا عند الإقلاع في المستقبل)"
 
 msgid "Merge requested... Please wait."
-msgstr ""
+msgstr ".جاري طلب الدمج... الرجاء الانتظار"
 
 msgid "MERGE FAILED"
-msgstr ""
+msgstr "فشل الدمج"
 
 msgid "Please check the logs."
-msgstr ""
+msgstr ".يرجى التحقق من السجلات"
 
 msgid "NO, IGNORE THIS TIME"
-msgstr ""
+msgstr "لا، تجاهل هذه المرة"
 
 msgid "NO, IGNORE FOREVER"
-msgstr ""
+msgstr "لا، تجاهل نهائيًا"
 
 msgid "Adding drive to ignore list..."
-msgstr ""
+msgstr "...جاري إضافة المحرك إلى قائمة التجاهل"
 
 msgid "YES, MERGE DRIVE"
-msgstr ""
+msgstr "نعم، دمج المحرك"
 
 msgid "NEW DRIVE DETECTED"
-msgstr ""
+msgstr "تم اكتشاف محرك جديد"
 
 msgid "Format and prepare this drive for game storage?"
-msgstr ""
+msgstr "هل تريد تهيئة هذا المحرك وتجهيزه لتخزين الألعاب؟"
 
 msgid "(ALL EXISTING DATA WILL BE ERASED)"
-msgstr ""
+msgstr "(سيتم محو جميع البيانات الموجودة)"
 
 msgid "Starting format process..."
-msgstr ""
+msgstr "...بدء عملية التهيئة"
 
 msgid "FORMAT FAILED"
-msgstr ""
+msgstr "فشلت التهيئة"
 
 msgid "YES, FORMAT & MERGE"
-msgstr ""
+msgstr "نعم , تهيئة و دمج"
 
 msgid "NO, IGNORE"
-msgstr ""
+msgstr "لا , تجاهل"
 
 #, c-format
 msgid "%d d"
