@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: batocera-es v34beta(2022/04/06)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-05-18 22:49+0800\n"
+"PO-Revision-Date: 2026-07-23 22:31+0800\n"
 "Last-Translator: wanger\n"
 "Language-Team: mikakunin,王二,monyxie\n"
 "Language: zh_CN\n"
@@ -2007,7 +2007,7 @@ msgid "VSYNC"
 msgstr "垂直同步"
 
 msgid "FPS LIMIT"
-msgstr ""
+msgstr "FPS限制"
 
 msgid "OVERSCAN"
 msgstr "过扫描"
@@ -2241,31 +2241,31 @@ msgid "UPDATER IS ALREADY RUNNING"
 msgstr "更新程序已经运行"
 
 msgid "START LOCAL MEDIA UPDATE"
-msgstr ""
+msgstr "启动本地媒体更新"
 
 msgid "REALLY UPDATE FROM LOCAL MEDIA?"
-msgstr ""
+msgstr "确定从本地介质更新？"
 
 msgid "SOFTWARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "通过torrent进行软件更新"
 
 msgid "SHARE UPDATES VIA TORRENT"
-msgstr ""
+msgstr "通过torrent共享更新"
 
 msgid "Torrent update service started"
-msgstr ""
+msgstr "Torrent更新服务已启动"
 
 msgid "Torrent update service stopped"
-msgstr ""
+msgstr "Torrent更新服务已停止"
 
 msgid "START UPDATE FROM TORRENT FILE"
-msgstr ""
+msgstr "从Torrent文件开始更新"
 
 msgid "REALLY UPDATE FROM TORRENT FILE ?"
-msgstr ""
+msgstr "确定从Torrent文件开始更新？"
 
 msgid "DOWNLOAD STATUS"
-msgstr ""
+msgstr "下载状态"
 
 msgid "LANGUAGE"
 msgstr "语言"
@@ -2423,19 +2423,19 @@ msgid "ENABLE LED"
 msgstr "启用LED"
 
 msgid "LED MODE"
-msgstr ""
+msgstr "LED模式"
 
 msgid "STATIC"
-msgstr ""
+msgstr "静态"
 
 msgid "RAINBOW"
-msgstr ""
+msgstr "彩虹"
 
 msgid "CHROMA"
-msgstr ""
+msgstr "色度"
 
 msgid "PULSE"
-msgstr ""
+msgstr "脉冲"
 
 msgid "LED BRIGHTNESS"
 msgstr "LED亮度"
@@ -2468,12 +2468,14 @@ msgid "ROOT PASSWORD"
 msgstr "管理员密码"
 
 msgid "CPU SECURITY MITIGATIONS"
-msgstr ""
+msgstr "CPU安全缓解措施"
 
 msgid ""
 "Disabling mitigations may improve performance on some systems at the cost of "
 "reduced protection against certain CPU vulnerabilities."
 msgstr ""
+"禁用缓解措施可能会在某些系统上提升性能， 但代价是降低了对某些 CPU 漏洞的防护"
+"能力。"
 
 msgid "LATENCY REDUCTION"
 msgstr "减少延迟"
@@ -3543,7 +3545,7 @@ msgid "UKNOWN ERROR"
 msgstr "未知错误"
 
 msgid "Checking for latest upgrade script..."
-msgstr ""
+msgstr "正在检查最新的升级脚本..."
 
 msgid "Collections"
 msgstr "合辑"
